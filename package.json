@@ -1,0 +1,27 @@
+{
+  "name": "week9code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dateformat": "^5.0.3",
+    "dotenv": "^10.0.0",
+    "easy-rbac": "^3.2.0",
+    "express": "^4.17.2",
+    "http-status-codes": "^2.2.0",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.4",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.2"
+  }
+}

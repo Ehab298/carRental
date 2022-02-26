@@ -1,0 +1,34 @@
+const cors = require('cors'); 
+const express = require('express')
+const app = express();
+app.use(cors());
+require('dotenv').config()
+const multer  = require('multer')
+app.use(express.json())
+port=process.env.PORT
+app.use('/Uploads',express.static('Uploads'))
+const connecttionDB =require('./DB/dbConnection')
+
+const {userRouter,
+    VehicleCompanyRouter,
+    BranchRouter,
+    VihicleRouter,
+    
+    bookingRouter,
+    conntactUsRouter} = require('./router/app')
+
+app.use(userRouter, VehicleCompanyRouter,
+    BranchRouter,
+    VihicleRouter,
+    
+    bookingRouter,
+    conntactUsRouter)
+    app.ger('/',(req, res) =>{
+       res.send('hi iii')
+   })
+
+app.use('./Uploads',express.static('Uploads'))
+connecttionDB()
+app.listen(port,()=>{
+    console.log(`isrun............${port}`);
+})
