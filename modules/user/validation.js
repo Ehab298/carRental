@@ -2,7 +2,8 @@ const Joi = require('joi');
 module.exports={
     singup:{
         body:Joi.object().required().keys({
-        UserName:Joi.string().required(),
+        firstName:Joi.string().required(),
+        lastName:Joi.string().required(),
         email:Joi.string().email().required(),
         password:Joi.string().required(),
         cpassword:Joi.ref('password'), 
@@ -20,3 +21,4 @@ module.exports={
         })
     }
 }
+lastName
