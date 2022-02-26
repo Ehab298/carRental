@@ -23,7 +23,7 @@ app.use(userRouter, VehicleCompanyRouter,
     
     bookingRouter,
     conntactUsRouter)
-    app.ger('/',(req, res) =>{
+    app.get('/',(req, res) =>{
        res.send('hi iii')
    })
 
