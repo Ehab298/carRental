@@ -6,7 +6,7 @@ const sendEmail = require("../../../middleware/sendEmail")
 
 var jwt = require('jsonwebtoken');
 module.exports =async(req,res,next)=>{
-    
+ try{   
     const{firstName,lastName,email,password,cpassword, phone,age,role,}= req.body
  const user =await userModel.findOne({email})
  if (user) {
@@ -25,7 +25,10 @@ module.exports =async(req,res,next)=>{
          res.status(200).json({message:"done",newUser});
         }
     });
-  
+    }
+ }
+ catch(err){
+    res.status(400).json({message:"unexpected error occured"});
  }
   
 }  

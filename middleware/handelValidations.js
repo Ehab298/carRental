@@ -28,7 +28,7 @@ module.exports=(schema)=>{
             next()
         }
         catch(error){
-            res.status(400).json("unexpected error");
+            res.status(400).json({message:"unexpected error occured"});
         }
 
     }
