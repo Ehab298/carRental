@@ -2,7 +2,7 @@
 
 module.exports=(schema)=>{
     return(req,res,next)=>{
-
+        try{
         let ValidateError=[]
 
         let checkMethod=["body","params","query"]
@@ -24,6 +24,12 @@ module.exports=(schema)=>{
         if (ValidateError.length) {
             res.status(400).json({err:"ValidateError",ValidateError})
         }
-        next()
+        else
+            next()
+        }
+        catch(error){
+            res.status(400).json("unexpected error");
+        }
+
     }
 }

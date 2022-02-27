@@ -20,9 +20,11 @@ const authentications= () => {
                     const user= await userModel.findOne({_id:decoded.id})
                     if (!user) {
                         res.status(400)({error:"rong user"})
-                    } 
-                    req.User=user
-                    next()
+                    }
+                    else{ 
+                        req.User=user
+                        next()
+                    }
                 }
 
 

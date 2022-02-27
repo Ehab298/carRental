@@ -7,7 +7,6 @@ const sendEmail = require("../../../middleware/sendEmail")
 var jwt = require('jsonwebtoken');
 module.exports =async(req,res,next)=>{
     
-    
     const{firstName,lastName,email,password,cpassword, phone,age,role,}= req.body
  const user =await userModel.findOne({email})
  if (user) {
