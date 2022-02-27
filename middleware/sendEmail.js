@@ -3,7 +3,7 @@ async function sendEmail (dest,message){
   try{
     let transporter = nodemailer.createTransport({
         service:"gmail",
-        secure: true,
+        secure: false,
         auth: {
           user: process.env.GMAIL, // generated ethereal user
           pass: process.env.PASSWORD, // generated ethereal password
