@@ -3,10 +3,14 @@ async function sendEmail (dest,message){
   try{
     let transporter = nodemailer.createTransport({
         service:"gmail",
-        secure: false,
+        secure: true,
         auth: {
           user: process.env.GMAIL, // generated ethereal user
           pass: process.env.PASSWORD, // generated ethereal password
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false,
         },
       });
     
