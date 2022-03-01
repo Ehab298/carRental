@@ -19,7 +19,7 @@ const authentications= () => {
                     req.user = decoded
                     const user= await userModel.findOne({_id:decoded.id})
                     if (!user) {
-                        res.status(400)({error:"rong user"})
+                        res.status(400).json({ error: "rong user" })
                     }
                     else{ 
                         req.User=user
