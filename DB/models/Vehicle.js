@@ -6,7 +6,7 @@ const VehicleSchema = new mongoose.Schema({
     color:{type:String},
     year:{type:Number},
     VehicleRate:{type:Number},
-    imageURL:{type:Array},
+    imageURL:{type:String},
     pricePerDay:{type:Number},
     transmissionType: {type:Boolean,default:false},
     Car_Seat:{type:Number},

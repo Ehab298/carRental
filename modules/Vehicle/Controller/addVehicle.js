@@ -1,16 +1,21 @@
 const  vehicleModel =require('../../../DB/models/Vehicle')
-debugger
+image=process.env.IMAGEURL
 
 try {
     module.exports = async(req,res)=>{
         const {brand,model,color, year,  VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
         
-        console.log(req.files);
+
         
-     
+        console.log(req.files);
+        var images = [];
+        req.files.forEach(function(item){
+            images.push(image+item.filename);
+        });
+
         const vehicleData= await vehicleModel.insertMany({brand,
-            model,color,year, VehicleRate, imageURL:req.files,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
-            res.status(200).json({message:"done",vehicleData})
+            model,color,year,images, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
+            res.status(200).json({message:"done",images,vehicleData})
     }
     
     
