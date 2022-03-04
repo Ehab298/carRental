@@ -1,16 +1,21 @@
 const  vehicleModel =require('../../../DB/models/Vehicle')
 
 
- module.exports = async(req,res)=>{
-    const {brand,model,color, year,  VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
+try {
+    module.exports = async(req,res)=>{
+        const {brand,model,color, year,  VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
+        
+        console.log(req.files);
+        
+     
+        const vehicleData= await vehicleModel.insertMany({brand,
+            model,color,year, VehicleRate, imageURL:req.file,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
+            res.status(200).json({message:"done",vehicleData})
+    }
     
-    console.log(req.files);
     
- 
-    const vehicleData= await vehicleModel.insertMany({brand,
-        model,color,year, VehicleRate, imageURL:req.file,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
-        res.status(200).json({message:"done",vehicleData})
+    
+    
+} catch (error) {
+    res.status(200).json({message:"error",error})
 }
-
-
-
