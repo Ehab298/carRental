@@ -1,5 +1,5 @@
 const  vehicleModel =require('../../../DB/models/Vehicle')
-
+debugger
 
 try {
     module.exports = async(req,res)=>{
@@ -9,7 +9,7 @@ try {
         
      
         const vehicleData= await vehicleModel.insertMany({brand,
-            model,color,year, VehicleRate, imageURL:req.file,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
+            model,color,year, VehicleRate, imageURL:req.files,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
             res.status(200).json({message:"done",vehicleData})
     }
     
@@ -17,5 +17,6 @@ try {
     
     
 } catch (error) {
+    console.log(error);
     res.status(200).json({message:"error",error})
 }

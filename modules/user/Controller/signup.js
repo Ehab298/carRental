@@ -7,7 +7,7 @@ const sendEmail = require("../../../middleware/sendEmail")
 var jwt = require('jsonwebtoken');
 module.exports =async(req,res,next)=>{
  try{   
-    const{firstName,lastName,email,password,cpassword, phone,age,role,}= req.body
+    const{firstName,lastName,email,password,cpassword, phone,role,}= req.body
  const user =await userModel.findOne({email})
  if (user) {
      res.json({error:"there is same email in DB"})
@@ -18,7 +18,7 @@ module.exports =async(req,res,next)=>{
             res.json({error:"hash err"})
         } else {
             const token = jwt.sign({ email}, 'shhhhh');
-            const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,age,role})
+            const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,role})
          let massage = `<html><body>
          <h1>Activate Your Account</h1><a href='https://car-rental-eg.herokuapp.com/virfiyEmail/${token}'>vifiy your email</a></body></html>`
          await sendEmail(email,massage)
