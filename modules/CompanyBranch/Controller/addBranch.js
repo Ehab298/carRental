@@ -7,7 +7,7 @@ const CompanyBranchmodel =require('../../../DB/models/CompanyBranch')
     if(Name){
         res.json({error:"there is same name in DB"})
     }else {
-        const newBranch= await CompanyBranchmodel.insertMany({ City,Street,BranchName,BranchPhone,CompanyID})
+        const newBranch= await CompanyBranchmodel.insertMany({ City,Street,BranchName,BranchPhone,CompanyID,UserID: req.User.id})
         res.json({message:"done",newBranch})
         }
 }
