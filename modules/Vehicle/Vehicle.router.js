@@ -4,7 +4,7 @@ const addVehicleController =require('./Controller/addVehicle');
 const getAllVehicleController =require('./Controller/getAllVehicle');
 const getOneVehicleController =require('./Controller/getOnevehicle');
 const  addVehicle  = require('./validations');
-const upload= require("../../middleware/multer")
+const upload= require("../../middleware/filebase")
 
 
 router.post("/addVehicle",handelValidations(addVehicle),upload.array('image', 4),addVehicleController)

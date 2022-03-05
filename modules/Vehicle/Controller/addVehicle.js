@@ -1,16 +1,14 @@
 const  vehicleModel =require('../../../DB/models/Vehicle')
-image=process.env.IMAGEURL
 
 try {
     module.exports = async(req,res)=>{
         const {brand,model,color, year,  VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
         
-
-        
         console.log(req.files);
         var images = [];
-        req.files.forEach(function(item){
-            images.push(image+item.filename);
+        req.files.forEach(function(file){
+            debugger;
+            images.push(file.location);
         });
 
         const vehicleData= await vehicleModel.insertMany({brand,

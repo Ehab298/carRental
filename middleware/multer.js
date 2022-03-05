@@ -1,35 +1,29 @@
-const Multer = require('multer')
-// const path = require('path')
-const key = require('../DB/mypravitkey.json')
-const FirebaseStorage = require('multer-firebase-storage')
-const multer  = Multer({
-    storage: FirebaseStorage({
-      bucketName: 'car-rental',
-      credentials: {
-        clientEmail: 'ehabmohammed677@gmail.com',
-        privateKey:key,
-        projectId: 'car-rental-77369'
-      }
-    })
+const multer = require('multer')
+const path = require('path')
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, '../uploads'))
+        console.log('here123');
+
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, uniqueSuffix + '_' + file.originalname)
+    }
 })
 
-    // ,filename: function (req, file, cb) {
-    //     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    //     cb(null, uniqueSuffix + '_' + file.originalname)
-    // }
 
 
+function fileFilter(req, file, cb) {
+    console.log('here');
+    if (file.mimetype == 'image/jpg' || file.mimetype == 'image/png' || file.mimetype == 'image/jif' || file.mimetype == 'image/jpeg') {
+        cb(null, true)
+    } else {
+        cb('in-valid file type', false)
 
-// function fileFilter(req, file, cb) {
-//     console.log('here');
-//     if (file.mimetype == 'image/jpg' || file.mimetype == 'image/png' || file.mimetype == 'image/jif' || file.mimetype == 'image/jpeg') {
-//         cb(null, true)
-//     } else {
-//         cb('in-valid file type', false)
+    }
+}
 
-//     }
-// }
+const upload = multer({ fileFilter, storage });
 
-
-
-module.exports = multer
+module.exports = upload
