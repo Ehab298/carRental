@@ -29,7 +29,7 @@ const storage = multerS3({
 
 function fileFilter(req, file, cb) {
     debugger;
-    if (file.mimetype == 'image/jpg' || file.mimetype == 'image/png' || file.mimetype == 'image/jif' || file.mimetype == 'image/jpeg') {
+    if (file.mimetype == 'image/jpg' || file.mimetype == 'image/png' || file.mimetype == 'image/jif' || file.mimetype == 'image/jfif') {
         cb(null, true)
     } else {
         cb('in-valid file type', false)
