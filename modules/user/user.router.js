@@ -18,7 +18,7 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
 router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
- router.put("/updateBlog/:id",updateController)
+ router.patch("/updateBlog/:id",updateController)
  router.delete("/delete/:id",authentications(),authorization(['adime']),deleteController)
  
  router.get("/getAllUser",getuserController)

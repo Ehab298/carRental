@@ -3,6 +3,8 @@ const handelValidations = require('../../middleware/handelValidations');
 const addVehicleController =require('./Controller/addVehicle');
 const getAllVehicleController =require('./Controller/getAllVehicle');
 const getOneVehicleController =require('./Controller/getOnevehicle');
+const deleteOneVehicleController =require('./Controller/deleteVehicle');
+const updatevehicleController =require('./Controller/upDateVehicle');
 const  addVehicle  = require('./validations');
 const upload= require("../../middleware/filebase")
 
@@ -10,7 +12,8 @@ const upload= require("../../middleware/filebase")
 router.post("/addVehicle",handelValidations(addVehicle),upload.array('image', 4),addVehicleController)
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle/:id",getOneVehicleController)
-
+router.delete("/deleteOneVehicle/:id",deleteOneVehicleController)
+router.patch("/updateOneVehicle/:id",updatevehicleController)
 
 // router.post('/pic',upload.array('image',4),(req, res) =>{
 //     console.log(req.file.filename);

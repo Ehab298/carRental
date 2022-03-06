@@ -6,7 +6,8 @@ const getAllcompanyController  =require('./Controller/getAllCompany');
 const getOnecompanyController  =require('./Controller/getOneCompany');
 const {authentications,authorization} = require('../../middleware/authintication');
 
-
+const deleteOnecompanyController =require('./Controller/deleteVechicle');
+const updatecompanyController =require('./Controller/upDateVehicle');
 
 
  router.get("/getAllcompany",getAllcompanyController)
@@ -15,7 +16,8 @@ const {authentications,authorization} = require('../../middleware/authintication
 
 
  router.post("/addcompany",authentications(),addcompanyController)
-
+ router.delete("/deleteOneCompany/:id",deleteOnecompanyController)
+ router.patch("/updateOneCompany/:id",updatecompanyController)
 
 
 module.exports=router
