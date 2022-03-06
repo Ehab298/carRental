@@ -8,6 +8,8 @@ const VehicleSchema = new mongoose.Schema({
     VehicleRate:{type:Number},
     imageURL:{type:Array},
     pricePerDay:{type:Number},
+    doorsNumber:{type:Number},
+    chairsNumber:{type:Number},
     transmissionType: {type:Boolean,default:false},
     Car_Seat:{type:Number},
     airbag:{type:Boolean,default:false},
