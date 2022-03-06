@@ -6,8 +6,8 @@ const getAllcompanyController  =require('./Controller/getAllCompany');
 const getOnecompanyController  =require('./Controller/getOneCompany');
 const {authentications,authorization} = require('../../middleware/authintication');
 
-const deleteOnecompanyController =require('./Controller/deleteVechicle');
-const updatecompanyController =require('./Controller/upDateVehicle');
+const deleteOnecompanyController =require('./Controller/deleteCompany');
+const updatecompanyController =require('./Controller/updateCompany');
 
 
  router.get("/getAllcompany",getAllcompanyController)
