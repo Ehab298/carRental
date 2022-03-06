@@ -24,6 +24,8 @@ const VehicleSchema = new mongoose.Schema({
    AC:{type:Boolean,default:false},
    Music_Player:{type:Boolean,default:false},
   CC:{type:Number},
+  Automatic:{type:Boolean,default:true},
+  manual:{type:Boolean,default:false},
   Extra_Tyre:{type:Boolean,default:false},
   Charger:{type:Boolean,default:false},
   Fire_Extinguisher:{type:Boolean,default:false},
