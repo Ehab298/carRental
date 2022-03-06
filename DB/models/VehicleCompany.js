@@ -4,7 +4,7 @@ const CompanySchema = new mongoose.Schema({
     City:{type:String},
     companyRate:{type:String},
     Street:{type:String},
-    Hotline:{type:String},
+    Hotline:{type:Number},
     UserID:{type:mongoose.Schema.Types.ObjectId,ref:"User"}
 },{
 timestamps:true
