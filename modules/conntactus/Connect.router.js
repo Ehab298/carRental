@@ -15,9 +15,9 @@ const {authentications,authorization} = require('../../middleware/authintication
 
 router.post("/conntactUs",authentications(),conntactController)
 router.get("/conntactUs",authentications(),getallConntactController)
-router.get("/getallconntactUs",authentications(),getoneConntactController)
-router.delete("/conntactUs",authentications(),updateoneController)
-router.patch("/conntactUs",authentications(),deleteConntactController)
+router.get("/getallconntactUs/:id",authentications(),getoneConntactController)
+router.delete("/conntactUs/:id",authentications(),updateoneController)
+router.patch("/conntactUs/:id",authentications(),deleteConntactController)
 
 
 module.exports=router
