@@ -8,7 +8,6 @@ module.exports={
         password:Joi.string().required(),
         cpassword:Joi.ref('password'), 
         phone:Joi.number().required(),
-        age:Joi.number().min(20).max(70).required(),
         role:Joi.string().required()
 
         })

@@ -10,6 +10,7 @@ const VehicleSchema = new mongoose.Schema({
     pricePerDay:{type:Number},
     doorsNumber:{type:Number},
     chairsNumber:{type:Number},
+    Vehicletype:{type:String},
     transmissionType: {type:Boolean,default:false},
     Car_Seat:{type:Number},
     airbag:{type:Boolean,default:false},
