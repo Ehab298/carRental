@@ -6,6 +6,7 @@ const handelValidations = require('../../middleware/handelValidations');
  const updateController =require('./Controller/updateuser');
   const deleteController =require('./Controller/deleteUser');
   const virfiyEmailController = require('./Controller/virfiyEmail');
+  const getOneuserController = require('./Controller/getOneuse');
  const getuserController =require('./Controller/getAlluser');
 const { singup,singin } = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
@@ -18,6 +19,7 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
 router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
+ router.post("/getOneuser",authentications(),getOneuserController)
  router.patch("/updateBlog/:id",updateController)
  router.delete("/delete/:id",authentications(),authorization(['adime']),deleteController)
  

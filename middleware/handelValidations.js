@@ -22,7 +22,7 @@ module.exports=(schema)=>{
         })
        
         if (ValidateError.length) {
-            res.status(400).json({err:"ValidateError",ValidateError})
+            res.status(400).json({message:"ValidateError",ValidateError})
         }
         else
             next()

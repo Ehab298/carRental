@@ -13,7 +13,7 @@ debugger
     
     else {
         if (!user.confirm) {
-             res.status(400).json({ error: "please confirmed email" })
+             res.status(400).json({ message: "please confirmed email" })
         }else
 
         {
@@ -21,7 +21,7 @@ debugger
 
             if(match) {
                 var token = jwt.sign({ id:user._id,role: user.role}, 'shhhhh');
-                res.status(200).json({token, userName: user.UserName, email: user.email, role: user.role})
+                res.status(200).json({message: "done",token, userName: user.UserName, email: user.email, role: user.role})
             }
             else{
                 res.status(400).json({message:"in-valid  user"});

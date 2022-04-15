@@ -10,12 +10,12 @@ module.exports =async(req,res,next)=>{
     const{firstName,lastName,email,password,cpassword, phone,role,}= req.body
  const user =await userModel.findOne({email})
  if (user) {
-     res.json({error:"there is same email in DB"})
+     res.json({message:"there is same email in DB"})
  } else {
      
     bcrypt.hash(password, 8, async function(err, hash) {
         if (err) {
-            res.json({error:"hash err"})
+            res.json({message:"hash err"})
         } else {
             const token = jwt.sign({ email}, 'shhhhh');
             const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,role})

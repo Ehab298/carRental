@@ -9,17 +9,17 @@ const authentications= () => {
 
        
         if (!token || token == null || token == undefined) {
-            res.json({ error: "in-valid token" })
+            res.json({ message: "in-valid token" })
         } else {
 
             jwt.verify(token, 'shhhhh',async function (err, decoded) {
                 if (err) {
-                    res.status(400).json({ error: "in-valid signature" })
+                    res.status(400).json({ message: "in-valid signature" })
                 } else {
                     req.user = decoded
                     const user= await userModel.findOne({_id:decoded.id})
                     if (!user) {
-                        res.status(400).json({ error: "rong user" })
+                        res.status(402).json({ message: "rong user" })
                     }
                     else{ 
                         req.User=user
@@ -40,7 +40,7 @@ const authorization= (data) => {
         if (data.includes(req.user.role)) {
             next()
         } else {
-            res.json({ error: "not auth user" })
+            res.status(402).res.json({ message: "not auth user" })
 
         }
     }

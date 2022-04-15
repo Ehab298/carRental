@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
 
 
  })} else{
-            res.json({ error: "token" })
+            res.json({ message: "token" })
         }
     
     
