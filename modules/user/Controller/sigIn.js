@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 module.exports = async (req, res) => {
-debugger
+
     const { email,password } = req.body;
     const user = await userModel.findOne({ email });
     console.log(user);
@@ -21,7 +21,7 @@ debugger
 
             if(match) {
                 var token = jwt.sign({ id:user._id,role: user.role}, 'shhhhh');
-                res.status(200).json({message: "done",token, userName: user.UserName, email: user.email, role: user.role})
+                res.status(200).json({message: "done",token, userName: user.UserName,lastName:user.lastName,phone:user.phone ,email: user.email, role: user.role})
             }
             else{
                 res.status(400).json({message:"in-valid  user"});

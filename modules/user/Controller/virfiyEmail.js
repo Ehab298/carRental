@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 module.exports = async (req, res) => {
-    debugger
+    
     const{token} =req.params
     if (token) {
         jwt.verify(token, 'shhhhh',async function (err, decoded) {

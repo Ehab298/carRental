@@ -16,11 +16,11 @@ const storage = multerS3({
     s3: s3,
     bucket: process.env.BucketName,
     metadata: function (req, file, cb) {
-        debugger
+        
       cb(null, {fieldName: file.fieldname});
     },
     key: function (req, file, cb) {
-        debugger;
+        ;
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
       cb(null, uniqueSuffix + '_' + file.originalname)
     }
@@ -28,7 +28,7 @@ const storage = multerS3({
 
 
 function fileFilter(req, file, cb) {
-    debugger;
+    ;
     if (['image/jpg','image/jpeg', 'image/png','image/gif','image/jif','image/jfif'].findIndex(a=>a ==file.mimetype)>-1) {
         cb(null, true)
     } else {

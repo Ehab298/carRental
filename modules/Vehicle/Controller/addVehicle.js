@@ -7,7 +7,7 @@ try {
         console.log(req.files);doorsNumber,chairsNumber
         var images = [];
         req.files.forEach(function(file){
-            debugger;
+            ;
             images.push(file.location);
         });
 

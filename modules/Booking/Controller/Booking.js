@@ -3,7 +3,7 @@ const  RentModel =require('../../../DB/models/Booking')
 
  module.exports = async(req,res)=>{
     const {Pick_upLocation,return_Location,DateFrom,DateTo,VehicleID} = req.body;
-    debugger
+    
         let overlappedRent = await RentModel.find({VehicleID:VehicleID, DateFrom: { $lte: DateTo }, DateTo: { $gte: DateFrom } }).select();
         //start date > today date && start date <= from date   
         if(new Date(DateFrom) < new Date() || new Date(DateFrom) > new Date(DateTo))
