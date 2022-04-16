@@ -21,6 +21,8 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singin",handelValidations(singin),singinController)
  router.get("/getOneuser",authentications(),getOneuserController)
  router.patch("/updateBlog/:id",updateController)
+ 
+ router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",authentications(),authorization(['adime']),deleteController)
  
  router.get("/getAllUser",getuserController)
