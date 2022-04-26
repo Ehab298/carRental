@@ -40,7 +40,7 @@ const authorization= (data) => {
         if (data.includes(req.user.role)) {
             next()
         } else {
-            res.status(402).res.json({ message: "not auth user" })
+            res.status(402).json({ message: "not auth user" })
 
         }
     }

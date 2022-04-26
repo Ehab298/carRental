@@ -20,7 +20,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
  router.get("/getOneuser",authentications(),getOneuserController)
- router.patch("/updateBlog/:id",updateController)
+ router.patch("/updateuser/:id",updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",authentications(),authorization(['adime']),deleteController)
