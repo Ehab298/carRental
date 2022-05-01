@@ -5,6 +5,8 @@ const vehicleModel = require("../../../DB/models/Vehicle")
 module.exports=async(req,res)=>{
     
     debugger
+
+    
         brand= req.query.brand?.trim();
         color=req.query.color?.trim();
         Vehicletype=req.query.Vehicletype?.trim();
@@ -19,7 +21,9 @@ module.exports=async(req,res)=>{
         if(brand) 
           whereConditions.push({ brand: { $regex: '.*' + brand   + '.*' } });
         if(model) 
-        whereConditions.push({ brand: { $regex: '.*' + model   + '.*' } });
+        whereConditions.push({ model: { $regex: '.*' + model   + '.*' } });
+        if(year) 
+        whereConditions.push({ year });
           if(_id) 
           whereConditions.push({ _id });
        
