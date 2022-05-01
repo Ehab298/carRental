@@ -12,8 +12,8 @@ const upload= require("../../middleware/filebase")
 const {authentications,authorization} = require('../../middleware/authintication');
 
 router.post("/addVehicle",handelValidations(addVehicle),upload.array('image', 4),authentications(),authorization(['Admin']),addVehicleController)
-router.get("/getAllVehicle",authentications(),authorization(['Admin']),getAllVehicleController)
-router.get("/getOneVehicle",authentications(),authorization(['Admin']),getOneVehicleController)
+router.get("/getAllVehicle",getAllVehicleController)
+router.get("/getOneVehicle",getOneVehicleController)
 router.get("/ownerVehicle/:id",authentications(),authorization(['Admin']),ownerController)
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
