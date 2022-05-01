@@ -23,6 +23,13 @@ router.patch("/updateOneVehicle/:id",authentications(),authorization(['Admin']),
 //     console.log(req.file.filename);
 //     let imageURL =`http://localhost:3000/pic/${req.file.filename}`
 //    res.json({ message: `welcome home `,imageURL })
+
+
+
+
+
+
+
 // })
    
 module.exports=router
