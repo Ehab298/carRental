@@ -8,8 +8,8 @@ module.exports={
             year:Joi.number().required(),
             image:Joi.array().required(),
             pricePerDay:Joi.number().required(),
-            Car_Seat:Joi.number().required(),
-            companyID:Joi.string().required()
+            
+            
         })
     }
 }

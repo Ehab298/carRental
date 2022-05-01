@@ -3,12 +3,13 @@
 const handelValidations = require('../../middleware/handelValidations');
  const singupController =require('./Controller/signup');
  const singinController =require('./Controller/sigIn');
+ const singinAdminController =require('./Controller/adminSigin');
  const updateController =require('./Controller/updateuser');
   const deleteController =require('./Controller/deleteUser');
   const virfiyEmailController = require('./Controller/virfiyEmail');
   const getOneuserController = require('./Controller/getOneuse');
  const getuserController =require('./Controller/getAlluser');
-const { singup,singin } = require('./validation');
+const { singup,singin,singinAdmin } = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
 const upload = require('../../middleware/multer');
 
@@ -19,6 +20,7 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
 router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
+ router.post("/Adminsingin",handelValidations(singinAdmin),singinAdminController)
  router.get("/getOneuser",authentications(),getOneuserController)
  router.patch("/updateuser/:id",updateController)
  
