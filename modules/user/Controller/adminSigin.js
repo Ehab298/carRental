@@ -33,7 +33,7 @@ debugger
                 res.status(200).json({message:"done",token2, firstName:user.firstName,lastName:user.lastName,phone:user.phone,email:user.email,conpanyId:user.conpanyId})
             }
             else{
-                res.status(400).json({message:"in-valid  user"});
+                res.status(400).json({message:"in-valid user"});
             }}
 
       
