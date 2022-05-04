@@ -8,7 +8,7 @@ module.exports={
         password:Joi.string().required(),
         cpassword:Joi.ref('password'), 
         phone:Joi.number().required(),
-        conpanuId:Joi.string(),
+        conpanyId:Joi.string(),
         role:Joi.string()
         
 

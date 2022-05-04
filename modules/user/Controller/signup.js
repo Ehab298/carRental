@@ -7,7 +7,7 @@ const sendEmail = require("../../../middleware/sendEmail")
 var jwt = require('jsonwebtoken');
 module.exports =async(req,res,next)=>{
  try{   
-    const{firstName,lastName,email,password,cpassword, phone,role,conpanuId}= req.body
+    const{firstName,lastName,email,password,cpassword, phone,role,conpanyId}= req.body
  const user =await userModel.findOne({email})
  if (user) {
      res.json({message:"there is same email in DB"})
@@ -18,10 +18,10 @@ module.exports =async(req,res,next)=>{
             res.json({message:"hash err"})
         } else {
             const token = jwt.sign({ email}, 'shhhhh');
-            const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,role,conpanuId})
-         let massage = `<html><body>
+            const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,role,conpanyId})
+          let massage = `<html><body>
          <h1>Activate Your Account</h1><a href='https://car-rental-eg.herokuapp.com/virfiyEmail/${token}'>vifiy your email</a></body></html>`
-         await sendEmail(email,massage)
+          await sendEmail(email,massage)
          res.status(200).json({message:"done",newUser});
         }
     });
@@ -34,4 +34,4 @@ module.exports =async(req,res,next)=>{
 }  
 
 
-// debugger https://car-rental-eg.herokuapp.com   http://localhost:4400
+//  https://car-rental-eg.herokuapp.com   http://localhost:4400

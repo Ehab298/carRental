@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     phone:{type:Number}, 
     confirm:{type:Boolean,default:false},
     role:{type:String,default:"User"},
-    conpanuId:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany",default:undefined}
+    conpanyId:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany",default:undefined}
 },{
 timestamps:true
 })
