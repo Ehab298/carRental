@@ -7,9 +7,13 @@ module.exports={
             color:Joi.string().required(),
             year:Joi.number().required(),
             image:Joi.array().required(),
-            pricePerDay:Joi.number().required(),
+            pricePerDay:Joi.number(),
+            doorsNumber:Joi.number(),
+            chairsNumber:Joi.number(),
+            Vehicletype:Joi.string()
             
             
         })
     }
 }
+
