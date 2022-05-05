@@ -9,27 +9,28 @@ module.exports = async (req, res) => {
 debugger
     const { email,password } = req.body;
 
-    const adminDate = await userModel.findOne({ email }).populate("UserID")
+    const userAdmin = await userModel.findOne({ email }).populate("conpanyId")
 
     
     
-    if (!adminDate) {
+    if (!userAdmin) {
         res.status(400).json({message:'in-valid  user'})
     } 
     
     else {
-        if (adminDate.role!="Admin") {
+        if (userAdmin.role!="Admin") {
              res.status(400).json({ message: "Admin only can singin" })
         }else
 
         {
-            const match = await bcrypt.compare(password, adminDate.password);
+            const match = await bcrypt.compare(password, userAdmin.password);
 
             if(match) {
-                var adminToken = jwt.sign({ id:adminDate._id,role: adminDate.role,conpanyId:adminDate.conpanyId}, 'shhhhh');
+                var adminToken = jwt.sign({ id:userAdmin._id,role: userAdmin.role,conpanyId:userAdmin.conpanyId}, 'shhhhh');
                 
         
-                
+                const adminDate = await userModel.findOne({ email }).populate("conpanyId")
+
                 res.status(200).json({message:"done",adminToken,adminDate })
             }
             else{
