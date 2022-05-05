@@ -32,7 +32,7 @@ const VehicleSchema = new mongoose.Schema({
   Fire_Extinguisher:{type:Boolean,default:false},
   First_Aid_Kit:{type:Boolean,default:false},
   Smoking_Preferences:{type:Boolean,default:false},
-  companyID:{type:mongoose.Types.ObjectId,ref:"VehicleCompany"}
+  UserID:{type:mongoose.Types.ObjectId,ref:"User"}
     
 },{
 timestamps:true
