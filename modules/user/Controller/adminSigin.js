@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
 debugger
     const { email,password } = req.body;
 
-    const adminDate = await userModel.findOne({ email }).populate("conpanyId")
+    const adminDate = await userModel.findOne({ email }).populate("UserID")
 
     
     
