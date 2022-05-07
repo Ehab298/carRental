@@ -11,7 +11,7 @@ module.exports=async(req,res)=>{
          {color:{ $regex: '.*' +serch+ '.*'}} ,
          {brand:{ $regex: '.*' +serch+ '.*'}},
          {model:{ $regex: '.*' +serch+ '.*'}},
-        ]}).populate('UserID')
+        ]}).populate('companyID')
         res.json({message:'success',data})
         
 };

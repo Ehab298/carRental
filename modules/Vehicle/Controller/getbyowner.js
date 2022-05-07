@@ -8,8 +8,7 @@ module.exports=async(req,res)=>{
         if (company) {
 
 
-console.log(company.companyID)
-console.log(company.UserID);
+
 companyID =company._id
 
 

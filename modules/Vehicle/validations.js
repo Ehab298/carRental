@@ -10,7 +10,8 @@ module.exports={
             pricePerDay:Joi.number(),
             doorsNumber:Joi.number(),
             chairsNumber:Joi.number(),
-            Vehicletype:Joi.string()
+            Vehicletype:Joi.string(),
+            conpanyId:Joi.string().required()
             
             
         })
