@@ -14,7 +14,7 @@ const {authentications,authorization} = require('../../middleware/authintication
 router.post("/addVehicle",handelValidations(addVehicle),upload.array('image', 4),authentications(),authorization(['Admin']),addVehicleController)
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle",getOneVehicleController)
-router.get("/ownerVehicle/:id",authentications(),authorization(['Admin']),ownerController)
+router.get("/ownerVehicle/:id",ownerController)
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
 router.patch("/updateOneVehicle/:id",authentications(),authorization(['Admin']),updatevehicleController)
