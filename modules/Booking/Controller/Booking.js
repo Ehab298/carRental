@@ -10,7 +10,7 @@ const  RentModel =require('../../../DB/models/Booking')
             res.status(400).json({message:"Date from not smaller than Date To or Date From not larger than Current Date"});
         //get overlaped rents, (StartA <= EndB) and (EndA >= StartB)
         else if(overlappedRent.length > 0)
-            res.status(400).json({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.ISODate()} TO ${overlappedRent[0].DateTo.ISODate()}`}); 
+        res.status(400).send({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.toISOString()} TO ${overlappedRent[0].DateTo.toISOString()}`});  
         else{
             const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,VehicleID,UserID: req.User.id})
             res.status(200).json({message:"done",Rend});

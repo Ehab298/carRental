@@ -5,7 +5,7 @@ const userModel =require('../DB/models/User')
 const authentications= () => {
     return async (req, res, next) => {
 
-        const token = req.headers["authorization"]?.split(' ')[1]
+        const token = req.headers["authorization"]
 
        
         if (!token || token == null || token == undefined) {
