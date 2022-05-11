@@ -11,7 +11,7 @@ const  addVehicle  = require('./validations');
 const upload= require("../../middleware/filebase")
 const {authentications,authorization} = require('../../middleware/authintication');
 
-router.post("/addVehicle",handelValidations(addVehicle),upload.array('image', 4),addVehicleController)
+router.post("/addVehicle",upload.array('image', 4),addVehicleController)
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle",getOneVehicleController)
 router.get("/ownerVehicle/:id",ownerController)
