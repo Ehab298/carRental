@@ -13,7 +13,7 @@ const handelValidations = require('../../middleware/handelValidations');
 const {authentications,authorization} = require('../../middleware/authintication');
 
 
-router.post("/addVehicle",authentications(),authorization(['Admin']),handelValidations(addVehicle),upload.array('image', 4),addVehicleController)
+router.post("/addVehicle",authentications(),authorization(['Admin']),upload.array('image', 4),handelValidations(addVehicle),addVehicleController)
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle",getOneVehicleController)
 router.get("/ownerVehicle/:id",ownerController)

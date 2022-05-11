@@ -9,6 +9,7 @@ port=process.env.PORT
 app.use('/Uploads',express.static('Uploads'))
 const connecttionDB =require('./DB/dbConnection')
 
+app.use(express.urlencoded({ extended: true }));
 const {userRouter,
     VehicleCompanyRouter,
     BranchRouter,
