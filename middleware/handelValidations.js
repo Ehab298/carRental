@@ -1,6 +1,7 @@
 
 
 module.exports=(schema)=>{
+    debugger
     return(req,res,next)=>{
         try{
         let ValidateError=[]

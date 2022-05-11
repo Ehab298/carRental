@@ -1,17 +1,18 @@
 const Joi = require('joi');
+debugger
 module.exports={
+    
     addVehicle:{
         body:Joi.object().required().keys({
             brand:Joi.string().required(),
             model:Joi.string().required(),
             color:Joi.string().required(),
             year:Joi.number().required(),
-            image:Joi.array().required(),
-            pricePerDay:Joi.number(),
-            doorsNumber:Joi.number(),
-            chairsNumber:Joi.number(),
-            Vehicletype:Joi.string(),
-            conpanyId:Joi.string().required()
+            pricePerDay:Joi.number().required(),
+            doorsNumber:Joi.number().required(),
+            chairsNumber:Joi.number().required(),
+            Vehicletype:Joi.string().required(),
+            
             
             
         })
