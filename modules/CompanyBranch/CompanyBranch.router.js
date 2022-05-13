@@ -1,6 +1,7 @@
 const router =require('express').Router()
 const addBranchController =require('./Controller/addBranch');
 const getBranchController =require('./Controller/getAllbranch');
+const getBranch =require('./Controller/getUserbranchs');
 const getOneBranchController =require('./Controller/getoneBranch');
 const updateBranchController =require('./Controller/updateBranch');
 const deleteBranchController =require('./Controller/deleteBranch');
@@ -10,7 +11,7 @@ const handelValidations = require('../../middleware/handelValidations');
 const { addBrach } = require('./validations');
 
 router.get("/getAllBranch",getBranchController)
-
+router.get("/userbranch",authentications(),getBranch)
 router.post("/addBranch",handelValidations(addBrach),addBranchController)
 
 
