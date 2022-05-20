@@ -12,6 +12,7 @@ module.exports = async(req,res)=>{
                 if(file?.location !=null)
                     images.push(file.location);
             });
+            
 
             const vehicleData= await vehicleModel.insertMany({brand,
                 model,color,year,Vehicletype,imageURL:images,doorsNumber,chairsNumber,Automatic,manual, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID})
