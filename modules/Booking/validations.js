@@ -1,6 +1,6 @@
 const Joi = require('joi');
 module.exports={
-    addBrach:{
+    addrent:{
         body:Joi.object().required().keys({
             DateFrom:Joi.string().required(),
             DateTo:Joi.string().required(),

@@ -7,11 +7,14 @@ const getOnebookingController = require('./Controller/getOnebooking');
 const updateBookingController = require('./Controller/UpdateBooking');
 const deletebookingController = require('./Controller/deleteBooking');
 
+const handelValidations = require('../../middleware/handelValidations');
+
+const  {addrent}  = require('./validations');
 
 router.get("/getOnebooking/:id",authentications(),getOnebookingController)
 router.get("/getALLbooking",authentications(),getAllbookingController)
 router.patch("/updateBooking/:id",authentications(),updateBookingController)
 router.delete("/deleteBooking/:id",authentications(),deletebookingController)
 
-router.post("/booking",authentications(),bookingController)
+router.post("/booking",handelValidations(addrent),authentications(),bookingController)
 module.exports=router
