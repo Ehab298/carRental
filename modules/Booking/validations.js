@@ -5,8 +5,8 @@ module.exports={
             DateFrom:Joi.string().required(),
             DateTo:Joi.string().required(),
             VehicleID:Joi.string().required(),
-            Pick_upLocation:Joi.date().required(),
-            return_Location:Joi.date().required(),
+            Pick_upLocation:Joi.string().required(),
+            return_Location:Joi.string().required(),
             message:Joi.string()
          
             
