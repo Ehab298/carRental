@@ -11,7 +11,7 @@ const handelValidations = require('../../middleware/handelValidations');
 
 const  {addrent}  = require('./validations');
 
-router.get("/getOnebooking/:id",authentications(),getOnebookingController)
+router.get("/getOnebooking/:id",getOnebookingController)
 router.get("/getALLbooking",authentications(),getAllbookingController)
 router.patch("/updateBooking/:id",authentications(),updateBookingController)
 router.delete("/deleteBooking/:id",authentications(),deletebookingController)

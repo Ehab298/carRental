@@ -7,6 +7,8 @@ const handelValidations = require('../../middleware/handelValidations');
  const updateController =require('./Controller/updateuser');
   const deleteController =require('./Controller/deleteUser');
   const virfiyEmailController = require('./Controller/virfiyEmail');
+  const getAllUserBooking = require('./Controller/getuserbooking');
+  const getAllOwnerBooking = require('./Controller/owneruserbooking');
   const getOneuserController = require('./Controller/getOneuse');
  const getuserController =require('./Controller/getAlluser');
 const { singup,singin,singinAdmin } = require('./validation');
@@ -17,6 +19,8 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
     res.json({ message: `welcome home ${req.User.UserName}` })
 })
 
+router.get('/ownerbooking/:conpanyId',getAllOwnerBooking)
+router.get('/userbooking/:UserID',getAllUserBooking)
 router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)

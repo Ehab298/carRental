@@ -19,7 +19,7 @@ router.get("/getOneVehicle",getOneVehicleController)
 router.get("/ownerVehicle/:id",ownerController)
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
-router.patch("/updateOneVehicle/:id",authentications(),authorization(['Admin']),updatevehicleController)
+router.patch("/updateOneVehicle/:id",updatevehicleController)
 
 // router.post('/pic',upload.array('image',4),(req, res) =>{
 //     console.log(req.file.filename);
