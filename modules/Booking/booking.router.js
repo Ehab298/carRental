@@ -16,5 +16,5 @@ router.get("/getALLbooking",authentications(),getAllbookingController)
 router.patch("/updateBooking/:id",authentications(),updateBookingController)
 router.delete("/deleteBooking/:id",authentications(),deletebookingController)
 
-router.post("/booking",bookingController)
+router.post("/booking",authentications(),bookingController)
 module.exports=router
