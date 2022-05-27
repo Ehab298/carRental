@@ -13,7 +13,7 @@ const  {addrent}  = require('./validations');
 
 router.get("/getOnebooking/:id",getOnebookingController)
 router.get("/getALLbooking",getAllbookingController)
-router.patch("/updateBooking/:id",authentications(),updateBookingController)
+router.patch("/updateBooking/:id",updateBookingController)
 router.delete("/deleteBooking/:id",deletebookingController)
 
 router.post("/booking",authentications(),handelValidations(addrent),bookingController)
