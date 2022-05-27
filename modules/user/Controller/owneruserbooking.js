@@ -2,7 +2,7 @@ const bookingModel = require("../../../DB/models/User")
 const car = require("../../../DB/models/Vehicle")
 const rent = require("../../../DB/models/Booking")
 module.exports=async(req,res)=>{
-    
+    debugger
     const conpanyId = req.params.conpanyId;
      
         let data1 = await bookingModel.find({conpanyId})
@@ -11,15 +11,14 @@ module.exports=async(req,res)=>{
           console.log(conpanyId);
 
           let data2 = await car.find({companyID:conpanyId})
-         let alex = data2._id
-         console.log(alex);
-          let data = await rent.find({VehicleID:alex})
+            console.log(res.data2);
+    
 
 
 
 
-          if(data.length>0)
-          res.json({message:'success',data})
+          if(data2.length>0)
+          res.json({message:'success',data2})
           
           else
           res.json({message:'NotFound'})
