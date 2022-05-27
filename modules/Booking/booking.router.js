@@ -14,7 +14,7 @@ const  {addrent}  = require('./validations');
 router.get("/getOnebooking/:id",getOnebookingController)
 router.get("/getALLbooking",getAllbookingController)
 router.patch("/updateBooking/:id",authentications(),updateBookingController)
-router.delete("/deleteBooking/:id",authentications(),deletebookingController)
+router.delete("/deleteBooking/:id",authentications(),handelValidations(addrent),deletebookingController)
 
 router.post("/booking",authentications(),bookingController)
 module.exports=router
