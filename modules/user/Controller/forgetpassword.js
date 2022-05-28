@@ -9,9 +9,7 @@ module.exports =async(req,res,next)=>{
 
     const{email}= req.body
  const user =await userModel.findOne({email})
- if (user) {
-     res.json({message:"there is same email in DB"})
- } else {
+
      
   
             const token = jwt.sign({ email}, 'shhhhh');
@@ -21,7 +19,7 @@ module.exports =async(req,res,next)=>{
           await sendEmail(email,massage)
          res.status(200).json({message:"done"});
         
-    }
+    
     
 }
 
