@@ -17,7 +17,7 @@ module.exports =async(req,res,next)=>{
           let massage = `<html><body>
          <h1>rest Your password</h1><a href='https://car-rental-eg.herokuapp.com/restpassword/${token}'>rest your password</a></body></html>`
           await sendEmail(email,massage)
-         res.status(200).json({message:"done"});
+         res.status(200).json({message:"done",token});
         
     
     
