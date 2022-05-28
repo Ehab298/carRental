@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
                         res.json({message:"hash err"})
                     } else {
 
-                    const updataUser = await userModel.findOneAndUpdate({email:user.email},{password:{password:hash}},{new:true})
+                    const updataUser = await userModel.findOneAndUpdate({email:user.email},{password:password},{new:true})
                     res.status(200).json({message:"done",updataUser});
                 
                     }})
