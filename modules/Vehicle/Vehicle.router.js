@@ -7,7 +7,7 @@ const getone =require('./Controller/getOnecar');
 const deleteOneVehicleController =require('./Controller/deleteVehicle');
 const ownerController =require('./Controller/getbyowner');
 const updatevehicleController =require('./Controller/upDateVehicle');
-const  {addVehicle}  = require('./validations');
+const  {addVehicle,updateVehicle}  = require('./validations');
 const upload= require("../../middleware/filebase")
 const handelValidations = require('../../middleware/handelValidations');
 const {authentications,authorization} = require('../../middleware/authintication');
@@ -19,7 +19,7 @@ router.get("/getOneVehicle",getOneVehicleController)
 router.get("/ownerVehicle/:id",ownerController)
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
-router.patch("/updateOneVehicle/:id",updatevehicleController)
+router.patch("/updateOneVehicle/:id",handelValidations(updateVehicle),updatevehicleController)
 
 // router.post('/pic',upload.array('image',4),(req, res) =>{
 //     console.log(req.file.filename);

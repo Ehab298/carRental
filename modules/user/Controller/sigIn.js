@@ -8,12 +8,12 @@ module.exports = async (req, res) => {
     const user = await userModel.findOne({ email });
     console.log(user);
     if (!user) {
-        res.status(400).json({message:'in-valid  user'})
+        json({message:'in-valid  user'})
     } 
     
     else {
         if (!user.confirm) {
-             res.status(400).json({ message: "please confirmed email" })
+             json({ message: "please confirmed email" })
         }else
 
         {
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
                 res.status(200).json({message:"done",token,id:user._id, firstName: user.firstName,lastName:user.lastName,phone:user.phone ,email: user.email, role: user.role})
             }
             else{
-                res.status(400).json({message:"in-valid  user"});
+               json({message:"in-valid  user"});
             }}
 
       
