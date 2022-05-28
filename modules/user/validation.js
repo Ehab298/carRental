@@ -27,5 +27,12 @@ module.exports={
         password:Joi.string().required(),
         
         })
+    },
+    restpassword:{
+        body:Joi.object().required().keys({
+            password:Joi.string().required(),
+            cpassword:Joi.ref('password'), 
+        
+        })
     }
 }
