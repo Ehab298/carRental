@@ -6,12 +6,12 @@ module.exports=async(req,res)=>{
 
     const _id = req.params.id;
     let company = await CompanyModel.findOne({ _id})
-    
+    console.log(company.id);
     if (company) {
 
      
 
-        let data =  await vehicleModel.find({companyID}).populate('companyID')
+        let data =  await vehicleModel.find({company}).populate('companyID')
             res.status(200).json({message:'success',data})
         } else {
             res.status(400).json({message:'err'})
