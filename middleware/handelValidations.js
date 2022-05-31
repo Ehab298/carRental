@@ -1,5 +1,4 @@
 
-
 module.exports=(schema)=>{
     debugger
     return(req,res,next)=>{
@@ -18,10 +17,8 @@ module.exports=(schema)=>{
                         ValidateError.push(validationResluts.error.details[0].message)
                     }
                 }
-               
             }
         })
-       
         if (ValidateError.length) {
             res.status(400).json({message:"ValidateError",ValidateError})
         }
@@ -31,6 +28,5 @@ module.exports=(schema)=>{
         catch(error){
             res.status(400).json({message:"unexpected error occured"});
         }
-
     }
 }

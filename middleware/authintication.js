@@ -1,19 +1,13 @@
 
 const jwt = require('jsonwebtoken')
 const userModel =require('../DB/models/User')
-
 const authentications= () => {
-    
     return async (req, res, next) => {
-
         const token = req.headers["authorization"]
-
-       
         if (!token || token == null || token == undefined) {
             res.json({ message: "in-valid token" })
         } else {
-
-            jwt.verify(token, 'shhhhh',async function (err, decoded) {
+                jwt.verify(token, 'shhhhh',async function (err, decoded) {
                 if (err) {
                     res.status(400).json({ message: "in-valid signature" })
                 } else {

@@ -16,14 +16,18 @@ const {userRouter,
     VihicleRouter,
     
     bookingRouter,
-    conntactUsRouter} = require('./router/app')
+    conntactUsRouter,
+    CompanyRateRouter,
+    VehicleRateRouter} = require('./router/app')
 
 app.use(userRouter, VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
     
     bookingRouter,
-    conntactUsRouter)
+    conntactUsRouter,
+    CompanyRateRouter,
+    VehicleRateRouter)
     app.get('/',(req, res) =>{
        res.send('hi iii')
    })

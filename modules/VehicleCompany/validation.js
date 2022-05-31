@@ -5,7 +5,6 @@ module.exports={
             CompanyName:Joi.string().required(),
             City:Joi.string().required(),
             Street:Joi.string().required(),
-            companyRate:Joi.string().required(),
              Hotline:Joi.number().required(),
       
 

@@ -20,12 +20,12 @@ module.exports = async (req, res) => {
             const match = await bcrypt.compare(password, user.password);
 
             if(match) {
-                var token = jwt.sign({ id:user._id,role: user.role}, 'shhhhh');
+                var token = jwt.sign({ id:user._id,role: user.role,CompanuID:user.conpanyId}, 'shhhhh');
                 
-                res.status(200).json({message:"done",token,id:user._id, firstName: user.firstName,lastName:user.lastName,phone:user.phone ,email: user.email, role: user.role})
+                res.status(200).json({message:"done",token,id:user._id, firstName: user.firstName,lastName:user.lastName,phone:user.phone ,email: user.email, role: user.role,CompanuID:user.conpanyId})
             }
             else{
-               json({message:"in-valid  user"});
+                res.status(400).json({message:"in-valid  user"});
             }}
 
       

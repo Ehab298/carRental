@@ -16,10 +16,10 @@ const {authentications,authorization} = require('../../middleware/authintication
 router.post("/addVehicle",authentications(),authorization(['Admin']),upload.array('image', 4),handelValidations(addVehicle),addVehicleController)
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle",getOneVehicleController)
-router.get("/ownerVehicle/:id",ownerController)
+router.get("/ownerVehicle",authentications(),ownerController)
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
-router.patch("/updateOneVehicle/:id",handelValidations(updateVehicle),updatevehicleController)
+router.patch("/updateOneVehicle/:id",updatevehicleController)
 
 // router.post('/pic',upload.array('image',4),(req, res) =>{
 //     console.log(req.file.filename);

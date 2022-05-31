@@ -1,6 +1,6 @@
 const  RentModel =require('../../../DB/models/Booking')
-
-
+const userModel = require("../../../DB/models/User")
+const car = require("../../../DB/models/Vehicle")
  module.exports = async(req,res)=>{
     const {Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID} = req.body;
     
@@ -12,8 +12,13 @@ const  RentModel =require('../../../DB/models/Booking')
         else if(overlappedRent.length > 0)
         res.json({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.toISOString()} TO ${overlappedRent[0].DateTo.toISOString()}`});  
         else{
-            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,UserID: req.User.id})
+
+            let data = await car.findOne({VehicleID:VehicleID})
+
+            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,UserID: req.User.id,comapnyID:data.companyID})
             res.status(200).json({message:"done",Rend});
+       
+                       
         }
 }
 

@@ -22,11 +22,6 @@ module.exports = async (req, res) => {
                 }
                 
             }}
-            
-        
-    
-
-
  })} else{
             res.json({ message: "token" })
         }

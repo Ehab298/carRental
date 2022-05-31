@@ -7,6 +7,7 @@ const bookingSchema = new mongoose.Schema({
     message:{type:String,default:undefined},
     VehicleID:{type:mongoose.Schema.Types.ObjectId,ref:"Vehicle"},
     UserID:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
+    comapnyID:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany"},
 },{
 timestamps:true
 })
