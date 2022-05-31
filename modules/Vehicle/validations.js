@@ -35,6 +35,7 @@ module.exports={
             Fire_Extinguisher:Joi.boolean(),
             First_Aid_Kit:Joi.boolean(),
             Smoking_Preferences:Joi.boolean(),
+            companyID:Joi.objectId()
           
             
             
