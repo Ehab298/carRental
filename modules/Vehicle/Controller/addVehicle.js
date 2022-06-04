@@ -4,10 +4,7 @@ module.exports = async(req,res)=>{
     try {
         const _comapny = req.User.conpanyId
         const id = req.User.id
-        console.log(_comapny);
-        console.log(_comapny.toString());
-        console.log(id);
-        console.log(id.toString());
+     
 
         const {brand,model,color, year,Vehicletype,Automatic,manual, doorsNumber,chairsNumber, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
        

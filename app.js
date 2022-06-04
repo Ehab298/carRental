@@ -5,6 +5,7 @@ app.use(cors());
 require('dotenv').config()
 const multer  = require('multer')
 app.use(express.json())
+app.set('view engine', 'ejs');
 port=process.env.PORT
 app.use('/Uploads',express.static('Uploads'))
 const connecttionDB =require('./DB/dbConnection')
