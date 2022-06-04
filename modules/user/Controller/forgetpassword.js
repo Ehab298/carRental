@@ -14,7 +14,7 @@ module.exports =async(req,res,next)=>{
   res.json({message:"User not found in DB"})
 } else {
     
-            const token = jwt.sign({ email}, 'shhhhh');
+           
           
           let massage = `<html><body>
          <h1>reset Your password</h1><a href='https://car-rental-eg.herokuapp.com/getOneuser'>vifiy your email</a></body></html>`
