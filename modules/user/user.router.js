@@ -31,7 +31,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singin",handelValidations(singin),singinController)
  router.post("/Adminsingin",handelValidations(singinAdmin),singinAdminController)
  router.get("/getOneuser/:token",getone)
- router.post("/forgetpasswor/:token",Restpassword)
+ router.post("/restpasswor/:token",Restpassword)
  router.patch("/updateuser/:id",updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)

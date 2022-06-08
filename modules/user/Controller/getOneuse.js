@@ -1,5 +1,5 @@
 const userModel = require("../../../DB/models/User");
-
+const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 const getone=async(req,res)=>{
     // const _id = req.User.id;
