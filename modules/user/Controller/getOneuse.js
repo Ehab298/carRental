@@ -2,6 +2,7 @@ const userModel = require("../../../DB/models/User");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 const body1=[]
+
 const getone=async(req,res)=>{
     const{token} =req.params
     console.log(token);
@@ -34,7 +35,7 @@ const Restpassword= async (req, res)=>{
       
             console.log(body1[0]);
           
-        const updataUser = await userModel.findOneAndUpdate({email:body1[0]},{password:hash},{new:true})
+        const updataUser = await userModel.findOneAndUpdate({email:decoded.email},{password:hash},{new:true})
         res.status(200).json({message:"done",updataUser});
     
     })
