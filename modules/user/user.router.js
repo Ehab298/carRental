@@ -10,8 +10,9 @@ const handelValidations = require('../../middleware/handelValidations');
   const getAllUserBooking = require('./Controller/getuserbooking');
   const getAllOwnerBooking = require('./Controller/owneruserbooking');
   const forgerpassword = require('./Controller/forgetpassword')
-  const Restpassword= require('./Controller/restpassword')
-  const {getone,restpassword} = require('./Controller/getOneuse');
+//   const Restpassword= require('./Controller/restpassword')
+  const{ getone,Restpassword }= require('./Controller/getOneuse');
+
  const getuserController =require('./Controller/getAlluser');
 const { singup,singin,singinAdmin ,restpassword} = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
@@ -24,13 +25,13 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
 router.get('/ownerbooking/:id',getAllOwnerBooking)
 router.get('/userbooking/:UserID',getAllUserBooking)
 router.post('/forgerpassword',forgerpassword)
-router.post('/restpassword',Restpassword)
+// router.post('/restpassword',Restpassword)
 router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
  router.post("/Adminsingin",handelValidations(singinAdmin),singinAdminController)
  router.get("/getOneuser/:token",getone)
- router.post("/getOneuser/:token",restpassword)
+ router.post("/forgetpasswor/:token",Restpassword)
  router.patch("/updateuser/:id",updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)

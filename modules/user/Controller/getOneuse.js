@@ -14,7 +14,7 @@ const getone=async(req,res)=>{
 }
 
 
-const restpassword= async (req, res) => {
+const Restpassword= async (req, res) => {
     
    
     const{token} =req.params
@@ -51,4 +51,4 @@ const restpassword= async (req, res) => {
     }
     
 
-    module.exports ={getone,restpassword}
+    module.exports ={getone,Restpassword}
