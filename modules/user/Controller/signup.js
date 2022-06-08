@@ -20,9 +20,9 @@ module.exports =async(req,res,next)=>{
             const token = jwt.sign({ email}, 'shhhhh');
             const newUser= await userModel.insertMany({firstName,lastName,email,password:hash, phone,role,conpanyId})
           let massage = `<html><body>
-         <h1>Activate Your Account</h1><a href='https://car-rental-eg.herokuapp.com/virfiyEmail/${token}'>vifiy your email</a></body></html>`
+         <h1>Activate Your Account</h1><iframe name="page"hidden></iframe><a href='https://car-rental-eg.herokuapp.com/virfiyEmail/${token}'target="page">vifiy your email</a></body></html>`
           await sendEmail(email,massage)
-         res.status(200).json({message:"done",newUser});
+         res.status(200).json({message:"done"});
         }
     });
     }

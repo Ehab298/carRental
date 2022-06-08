@@ -33,7 +33,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.patch("/updateuser/:id",updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
- router.delete("/delete/:id",authentications(),authorization(['adime']),deleteController)
+ router.delete("/delete/:id",deleteController)
  
  router.get("/getAllUser",getuserController)
 
