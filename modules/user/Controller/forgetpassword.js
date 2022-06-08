@@ -15,10 +15,14 @@ module.exports =async(req,res,next)=>{
 } else {
     
            
-   const token = jwt.sign({ email}, 'shhhhh');
-          let massage = `<html><body>
-         <h1>reset Your password</h1><a href='https://car-rental-eg.herokuapp.com/getOneuser/${token}'>verify your email</a></body></html>`
-          await sendEmail(email,massage)
+   
+        
+
+          const token = jwt.sign({ email}, 'shhhhh');
+          
+        let massage = `<html><body>
+       <h1>Activate Your Account</h1><a href='https://car-rental-eg.herokuapp.com/getOneuser/${token}'>vifiy your email</a></body></html>`
+       await sendEmail(email,massage)
          res.status(200).json({message:"done"});
    
 }
