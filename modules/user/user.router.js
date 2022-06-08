@@ -21,7 +21,7 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
     res.json({ message: `welcome home ${req.User.UserName}` })
 })
 
-router.get('/ownerbooking',authentications(),getAllOwnerBooking)
+router.get('/ownerbooking/:id',getAllOwnerBooking)
 router.get('/userbooking/:UserID',getAllUserBooking)
 router.post('/forgerpassword',forgerpassword)
 router.post('/restpassword',Restpassword)

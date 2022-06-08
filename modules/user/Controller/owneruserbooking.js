@@ -4,9 +4,12 @@ const rent = require("../../../DB/models/Booking")
 module.exports=async(req,res)=>{
  
   
-      const _id = req.User.conpanyId;
-   
-      let cursor = await car.findOne({companyID:_id}).cursor()
+  const _id = req.params.id;
+  
+  
+  let Companyid = await car.findOne({_id}).cursor()
+
+      let cursor = await car.findOne({companyID:Companyid.conpanyId}).cursor()
 
   
 
