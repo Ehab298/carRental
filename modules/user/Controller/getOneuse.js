@@ -1,16 +1,28 @@
 const userModel = require("../../../DB/models/User");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+const body1=[]
 const getone=async(req,res)=>{
-    // const _id = req.User.id;
-    // const _comapny = req.User.conpanyId;
-
-    // let data = await userModel.findOne({_id}).select("-password")
-
-    // res.status(200).json({message:'success',data})
+    const{token} =req.params
+    console.log(token);
+    if (token) {
+        jwt.verify(token, 'shhhhh',async function (err, decoded) {
+            if (err) {
+                res.status(400).json({ error: "in-valid signature" })
+            } else {
+                const user =await userModel.findOne({email:decoded.email})
+            if (!user) {
+                res.status(400).json({ error: "in-vali user" })
+            }    else{
+                body1.push(decoded.email)
+         console.log(body1[0]);
+                res.status(200).render('restpassword.ejs');
+            }}
+ })} 
+                
     
 
-    res.status(200).render('restpassword.ejs');
+    
 }
 
 
@@ -34,7 +46,7 @@ const Restpassword= async (req, res) => {
                         res.json({message:"hash err"})
                     } else {
                       
-                    const updataUser = await userModel.findOneAndUpdate({email:user.email},{password:hash},{new:true})
+                    const updataUser = await userModel.findOneAndUpdate({email:body1[0]},{password:hash},{new:true})
                     res.status(200).json({message:"done",updataUser});
                 
                     }})
