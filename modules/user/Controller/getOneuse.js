@@ -38,7 +38,7 @@ const Restpassword= async (req, res)=>{
        
           
         const updataUser = await userModel.findOneAndUpdate({email:email1},{password:hash},{new:true})
-        res.status(200).json({message:"done",updataUser});
+        res.status(200).json("success");
     
     })
 }
