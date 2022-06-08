@@ -1,6 +1,6 @@
 const userModel = require("../../../DB/models/User");
-const restpassword = require("./restpassword");
 
+var jwt = require('jsonwebtoken');
 const getone=async(req,res)=>{
     // const _id = req.User.id;
     // const _comapny = req.User.conpanyId;
