@@ -18,6 +18,7 @@ const Restpassword= async (req, res) => {
     
    
     const{token} =req.params
+    console.log(token);
     if (token) {
         jwt.verify(token, 'shhhhh',async function (err, decoded) {
             if (err) {
