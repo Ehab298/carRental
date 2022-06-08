@@ -29,7 +29,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/singup",handelValidations(singup),singupController)
  router.post("/singin",handelValidations(singin),singinController)
  router.post("/Adminsingin",handelValidations(singinAdmin),singinAdminController)
- router.get("/getOneuser",getOneuserController)
+ router.get("/getOneuser/:token",getOneuserController)
  router.patch("/updateuser/:id",updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
