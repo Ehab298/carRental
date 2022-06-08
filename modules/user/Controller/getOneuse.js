@@ -1,6 +1,6 @@
 const userModel = require("../../../DB/models/User")
 
- const getuser=async(req,res)=>{
+module.exports=async(req,res)=>{
     // const _id = req.User.id;
     // const _comapny = req.User.conpanyId;
 
@@ -13,4 +13,3 @@ const userModel = require("../../../DB/models/User")
 }
 
 
-module.exports=getuser
