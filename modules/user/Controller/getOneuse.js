@@ -40,13 +40,13 @@ const Restpassword= async (req, res) => {
             if (!user) {
                 res.status(400).json({ error: "in-vali user" })
             }    else{
-                let {password,cpassword} =  req.body
+                let {email,password,cpassword} =  req.body
                 bcrypt.hash(password, 8, async function(err, hash) {
                     if (err) {
                         res.json({message:"hash err"})
                     } else {
                       
-                    const updataUser = await userModel.findOneAndUpdate({email:body1[0]},{password:hash},{new:true})
+                    const updataUser = await userModel.findOneAndUpdate({email},{password:hash},{new:true})
                     res.status(200).json({message:"done",updataUser});
                 
                     }})
