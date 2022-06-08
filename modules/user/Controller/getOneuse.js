@@ -1,7 +1,8 @@
 const userModel = require("../../../DB/models/User");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-const body1=[]
+const body1={}
+var email1;
 
 const getone=async(req,res)=>{
     const{token} =req.params
@@ -15,8 +16,9 @@ const getone=async(req,res)=>{
             if (!user) {
                 res.status(400).json({ error: "in-vali user" })
             }    else{
-                body1.push(decoded.email)
-         console.log(body1[0]);
+                
+                email1=decoded.email
+      
                 res.status(200).render('restpassword.ejs');
             }}
  })} 
@@ -33,9 +35,9 @@ const Restpassword= async (req, res)=>{
     let {password,cpassword} =  req.body
     bcrypt.hash(password, 8, async function(err, hash) {
       
-            console.log(body1[0]);
+       
           
-        const updataUser = await userModel.findOneAndUpdate({email:decoded.email},{password:hash},{new:true})
+        const updataUser = await userModel.findOneAndUpdate({email:email1},{password:hash},{new:true})
         res.status(200).json({message:"done",updataUser});
     
     })
