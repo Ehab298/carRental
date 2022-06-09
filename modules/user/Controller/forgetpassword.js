@@ -46,7 +46,7 @@ module.exports =async(req,res,next)=>{
                             <tr>
                                 <td style="text-align:center;">
                                   <a href="https://rakeshmandal.com" title="logo" target="_blank">
-                                    <img width="60" src="https://www.pngegg.com/ar/png-nqvsn" title="logo" alt="logo">
+                                    <img width="60" src="https://i.ibb.co/hL4XZp2/android-chrome-192x192.png" title="logo" alt="logo">
                                   </a>
                                 </td>
                             </tr>
@@ -72,7 +72,7 @@ module.exports =async(req,res,next)=>{
                                                     following link and follow the instructions.
                                                 </p>
                                                 <a href="https://car-rental-eg.herokuapp.com/getOneuser/${token}"
-                                                    style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
+                                                    style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
                                                     Password</a>
                                             </td>
                                         </tr>
