@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
                     res.status(400).json({ error: "you already confirmed email" })
                 }else{
                     const updataUser = await userModel.findOneAndUpdate({email:user.email},{confirm:true},{new:true})
-                    res.status(200).json({message:"done",updataUser});
+                    res.status(200).render("start.ejs")
                 }
                 
             }}
