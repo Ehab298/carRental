@@ -4,18 +4,29 @@ const userModel = require("../../../DB/models/User")
 module.exports=async(req,res)=>{
 
 
-    const _id = req.params.id;
-    let company = await CompanyModel.findOne({ _id})
-    console.log(company);
-    console.log(company.id);
-    if (company) {
+//62216627945c286035a19aa3
+   
+
+
+// const _id = req.params.id;
+//         let data = await userModel.findOne({_id})
+//         res.json({message:'success',data})
+    // console.log("here");
+    // console.log(User);
+    // console.log(User.conpanyId);
+
+
+
+
+    // let company = await CompanyModel.find({ _id:User.conpanyId})
+    // if (company) {
 
      
 
-        let data =  await vehicleModel.find({companyID:company.id}).populate('companyID')
-            res.status(200).json({message:'success',data})
-        } else {
-            res.status(400).json({message:'err'})
-        }
+    //     let data =  await vehicleModel.find({companyID:company.id}).populate('companyID')
+    //         res.status(200).json({message:'success',data})
+    //     } else {
+    //         res.status(400).json({message:'err'})
+    //     }
 }
     
