@@ -46,7 +46,7 @@ module.exports =async(req,res,next)=>{
                             <tr>
                                 <td style="text-align:center;">
                                   <a href="https://rakeshmandal.com" title="logo" target="_blank">
-                                    <img width="60" src="https://i.ibb.co/hL4XZp2/android-chrome-192x192.png" title="logo" alt="logo">
+                                    <img width="60" src="https://car-rental.s3.filebase.com/1646498682054-463746641_webp_listing_main_MG_EZS.jpg" title="logo" alt="logo">
                                   </a>
                                 </td>
                             </tr>
