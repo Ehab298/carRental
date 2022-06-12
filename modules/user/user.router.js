@@ -5,10 +5,10 @@ const handelValidations = require('../../middleware/handelValidations');
  const singinController =require('./Controller/sigIn');
  const singinAdminController =require('./Controller/adminSigin');
  const updateController =require('./Controller/updateuser');
-  const deleteController =require('./Controller/deleteUser');
+ const deleteController =require('./Controller/deleteUser');
+  const getownerbooking =require('./Controller/owner');
   const virfiyEmailController = require('./Controller/virfiyEmail');
   const getAllUserBooking = require('./Controller/getuserbooking');
-  const getAllOwnerBooking = require('./Controller/owneruserbooking');
   const forgerpassword = require('./Controller/forgetpassword')
 //   const Restpassword= require('./Controller/restpassword')
   const{ getone,Restpassword }= require('./Controller/getOneuse');
@@ -22,7 +22,7 @@ router.get('/home',authentications(),authorization(['user']),(req, res) =>{
     res.json({ message: `welcome home ${req.User.UserName}` })
 })
 
-router.get('/ownerbooking/:id',getAllOwnerBooking)
+
 router.get('/userbooking/:UserID',getAllUserBooking)
 router.post('/forgerpassword',forgerpassword)
 // router.post('/restpassword',Restpassword)
@@ -36,7 +36,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",deleteController)
- 
+ router.get('/ownerbooking/:comapnyID',getownerbooking)
  router.get("/getAllUser",getuserController)
 
  router.post('/pic',upload.single('image'),(req, res) =>{

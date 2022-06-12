@@ -1,7 +1,7 @@
 const express = require('express')
-const cors = require('cors'); 
+ const cors = require('cors'); 
 const app = express();
-app.use(cors());
+ app.use(cors());
 require('dotenv').config()
 const multer  = require('multer')
 app.use(express.json())
@@ -17,7 +17,7 @@ const {userRouter,
     VihicleRouter,
     
     bookingRouter,
-    conntactUsRouter,
+    conntactUsRouter,z
   
     } = require('./router/app')
 
