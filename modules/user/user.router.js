@@ -10,6 +10,7 @@ const handelValidations = require('../../middleware/handelValidations');
   const virfiyEmailController = require('./Controller/virfiyEmail');
   const getAllUserBooking = require('./Controller/getuserbooking');
   const forgerpassword = require('./Controller/forgetpassword')
+  const ownerVehicleController = require('./Controller/Vehicleowner')
 //   const Restpassword= require('./Controller/restpassword')
   const{ getone,Restpassword }= require('./Controller/getOneuse');
 
@@ -17,6 +18,7 @@ const handelValidations = require('../../middleware/handelValidations');
 const { singup,singin,singinAdmin ,restpassword} = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
 const upload = require('../../middleware/multer');
+const { required } = require('joi');
 
 router.get('/home',authentications(),authorization(['user']),(req, res) =>{
     res.json({ message: `welcome home ${req.User.UserName}` })
@@ -37,6 +39,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",deleteController)
  router.get('/ownerbooking/:comapnyID',getownerbooking)
+ router.get("/ownerVehicle/:id",ownerVehicleController)
  router.get("/getAllUser",getuserController)
 
  router.post('/pic',upload.single('image'),(req, res) =>{
