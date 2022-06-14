@@ -12,12 +12,8 @@ module.exports =async (req, res) => {
 const _id= req.params.id;
         let User = await userModel.findOne({_id})
     
-
-
- 
-
-
-
+if (User.conpanyId) {
+    
 
     let company = await CompanyModel.find({ _id:User.conpanyId})
 
@@ -29,7 +25,19 @@ const _id= req.params.id;
         let data =  await vehicleModel.find({companyID:company[0]._id}).populate('companyID')
             res.status(200).json({message:'success',data})
         } else {
-            res.status(400).json({message:'err'})
+            res.status(400).json({message:'notadmin'})
         }
+} else {
+    
+    res.status(400).json({message:'notadmin'})
+    
+}
+
+ 
+
+
+
+
+
 }
     
