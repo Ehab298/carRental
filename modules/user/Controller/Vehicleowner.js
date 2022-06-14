@@ -12,9 +12,8 @@ module.exports =async (req, res) => {
 const _id= req.params.id;
         let User = await userModel.findOne({_id})
     
-if (User.conpanyId) {
-    
 
+    
     let company = await CompanyModel.find({ _id:User.conpanyId})
 
  
@@ -27,9 +26,6 @@ if (User.conpanyId) {
         } else {
             res.status(400).json({message:'notadmin'})
         }
-} else {
-    
-    res.status(400).json({message:'notadmin'})
     
 }
 
@@ -39,5 +35,4 @@ if (User.conpanyId) {
 
 
 
-}
-    
+
