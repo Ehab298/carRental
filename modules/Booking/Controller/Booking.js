@@ -13,10 +13,11 @@ const car = require("../../../DB/models/Vehicle")
         res.json({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.toISOString()} TO ${overlappedRent[0].DateTo.toISOString()}`});  
         else{
 
-            let data = await car.findOne({VehicleID:VehicleID})
+            let data = await car.find({_id:VehicleID})
 
-            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,UserID: req.User.id,comapnyID:data.companyID})
-            res.status(200).json({message:"done",Rend});
+            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,UserID: req.User.id,comapnyID:data[0].companyID})
+            res.status(200).json({message:"done"});
+       
        
                        
         }

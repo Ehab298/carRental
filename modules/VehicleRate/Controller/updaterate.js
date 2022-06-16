@@ -5,7 +5,11 @@ const  VehicleRatecontrol =require('../../../DB/models/VehicleRate')
     const {  VehicleRate,VehicleID} = req.body;
    
         const Data= await VehicleRatecontrol.insertMany({  VehicleRate,VehicleID, UserID: req.User.id})
-        res.json({message:"done",Data})
-        
+       
+        let data =    await   VehicleRatecontrol.aggregate([{ $group: {
+            _id: '$UserID',
+            VehicleRateavg: { $avg: '$VehicleRate'}
+    }}])
+    res.status(200).json({message:'success',data})
 }
 

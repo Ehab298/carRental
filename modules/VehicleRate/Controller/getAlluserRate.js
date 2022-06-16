@@ -1,13 +1,17 @@
+const  VehicleRatecontrol =require('../../../DB/models/VehicleRate')
 // const  VehicleRatecontrol =require('../../../DB/models/VehicleRate')
 
+module.exports=async(req,res)=>{
 // module.exports=async(req,res)=>{
     
-     
-//         // let data1 = await VehicleRatecontrol.find({})
-//         // console.log(data.VehicleRate);
-//         // let data2 = await VehicleRatecontrol.find({data})
+
         
         
+     let data =    await   VehicleRatecontrol.aggregate([{ $group: {
+                _id: '$UserID',
+                VehicleRateavg: { $avg: '$VehicleRate'}
+        }}])
+        res.status(200).json({message:'success',data})
 //          await   VehicleRatecontrol.aggregate([{ $group: {
 //                 _id: '$UserID',
 //                 VehicleRateavg: { $avg: '$VehicleRate'}
@@ -21,9 +25,12 @@
         
 
             
+        // console.log(data1.VehicleRateavg);
+        // res.json({message:'success',data1})
+        // res.json({message:'success',result})
+}
 //         // console.log(data1.VehicleRateavg);
 //         // res.json({message:'success',data1})
 //         // res.json({message:'success',result})
 // }
-
 
