@@ -17,7 +17,8 @@ const {userRouter,
     VihicleRouter,
     
     bookingRouter,
-    conntactUsRouter,VehicleRateRouter
+    conntactUsRouter,
+    // VehicleRateRouter
   
     } = require('./router/app')
 
@@ -26,7 +27,8 @@ app.use(userRouter, VehicleCompanyRouter,
     VihicleRouter,
     
     bookingRouter,
-    conntactUsRouter,VehicleRateRouter
+    conntactUsRouter,
+    // VehicleRateRouter
   
     )
     app.get('/',(req, res) =>{
