@@ -3,7 +3,7 @@ module.exports=async(req,res)=>{
     
     const UserID = req.params.UserID;
      
-        let data = await bookingModel.find({UserID:UserID}).populate('VehicleID')
+        let data = await bookingModel.find({UserID}).populate('VehicleID')
         if(data.length>0)
         res.json({message:'success',data})
         else
