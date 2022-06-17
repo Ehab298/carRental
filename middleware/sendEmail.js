@@ -16,9 +16,9 @@ async function sendEmail (dest,message){
     
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: `"Ehab 👻" <${process.env.GMAIL}>`, // sender address
+        from: `"Vehicle Rentel System" <${process.env.GMAIL}>`, // sender address
         to: dest, // list of receivers
-        subject: "Car_Rentai ✔", // Subject line
+        subject: "Vehicle Rentel System ✔", // Subject line
         text: "Hello world?", // plain text body
         html:message , // html body
       });
