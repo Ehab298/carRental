@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 
-Joi.objectId = require('joi-objectid')(Joi)
+
 module.exports={
     
     VehicleRate:{
@@ -9,8 +9,8 @@ module.exports={
          
             
             
-            VehicleRate:Joi.number().min(1).max(5),
-            VehicleID:Joi.objectId().required()
+            VehicleRate:Joi.number().min(0).max(6),
+            VehicleID:Joi.string()
           
             
         })

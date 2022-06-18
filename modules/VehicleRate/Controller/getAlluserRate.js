@@ -11,6 +11,8 @@ module.exports=async(req,res)=>{
                 _id: '$UserID',
                 VehicleRateavg: { $avg: '$VehicleRate'}
         }}])
+console.log(data[0].VehicleRateavg);
+
         res.status(200).json({message:'success',data})
 //          await   VehicleRatecontrol.aggregate([{ $group: {
 //                 _id: '$UserID',
