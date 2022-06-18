@@ -2,7 +2,7 @@ const  RentModel =require('../../../DB/models/Booking')
 const userModel = require("../../../DB/models/User")
 const car = require("../../../DB/models/Vehicle")
  module.exports = async(req,res)=>{
-    const {Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID} = req.body;
+    const {Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,status} = req.body;
     
         let overlappedRent = await RentModel.find({VehicleID:VehicleID, DateFrom: { $lte: DateTo }, DateTo: { $gte: DateFrom } }).select();
         //start date > today date && start date <= from date   
@@ -15,7 +15,7 @@ const car = require("../../../DB/models/Vehicle")
 
             let data = await car.find({_id:VehicleID})
 
-            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,VehicleID,UserID: req.User.id,comapnyID:data[0].companyID})
+            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,status,VehicleID,UserID: req.User.id,comapnyID:data[0].companyID}).populate('UserID')
             res.status(200).json({message:"done",Rend});
        
        

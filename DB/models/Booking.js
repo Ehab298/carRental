@@ -5,6 +5,7 @@ const bookingSchema = new mongoose.Schema({
     DateFrom:{type:Date},
     DateTo:{type:Date},
     message:{type:String,default:undefined},
+    status:{type:String,default:"Not response"},
     VehicleID:{type:mongoose.Schema.Types.ObjectId,ref:"Vehicle"},
     UserID:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
     comapnyID:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany"},
