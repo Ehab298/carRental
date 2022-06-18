@@ -12,7 +12,7 @@ module.exports=async(req,res)=>{
         for (let index = 0;index<data.length; index++) {
            
             let y =data[index].DateTo.toISOString()
-            if(x>y){
+            if(x>=y){
                
                 body.push(data[index]);
         
