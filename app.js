@@ -15,7 +15,7 @@ const {userRouter,
     VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
-    
+    CompanyRateRouter,
     bookingRouter,
     conntactUsRouter,
     VehicleRateRouter
@@ -25,7 +25,7 @@ const {userRouter,
 app.use(userRouter, VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
-    
+    CompanyRateRouter,
     bookingRouter,
     conntactUsRouter,
     VehicleRateRouter

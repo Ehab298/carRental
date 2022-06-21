@@ -1,15 +1,18 @@
-// const router = require('express').Router();
-
-// const addCompanyeRate =require('./Controller/addCompany');
-
-// const {authentications,authorization} = require('../../middleware/authintication');
-
-// const { addcompanyRate } = require('./validation')
-// const handelValidations = require('../../middleware/handelValidations');
-
-// router.post("/CompanyRate",authentications(),handelValidations(addcompanyRate),addCompanyeRate)
+const router = require('express').Router();
 
 
+
+const {authentications,authorization} = require('../../middleware/authintication');
+
+const  {CompanyRate}  = require('./validation');
+const handelValidations = require('../../middleware/handelValidations');
+
+const updateVehicleRateController =require('./Controller/addCompanyRate');
+
+
+
+
+router.post("/updateCompanyRate",authentications(),handelValidations(CompanyRate),updateVehicleRateController)
 
    
-// module.exports=router
+module.exports=router

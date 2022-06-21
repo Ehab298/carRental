@@ -1,19 +1,19 @@
-// const Joi = require('joi');
+const Joi = require('joi');
 
 
-// Joi.objectId = require('joi-objectid')(Joi)
-// module.exports={
+
+module.exports={
     
-//     addcompanyRate:{
-//         body:Joi.object().required().keys({
+    CompanyRate:{
+        body:Joi.object().required().keys({
          
             
             
-//             companyRate:Joi.number().min(1).max(5).required(),
-//             CompanyID:Joi.objectId().required()
+            companyRate:Joi.number().min(0).max(5).required(),
+            CompanyID:Joi.string().required()
           
             
-//         })
-//     }
+        })
+    }
    
-// }
+}

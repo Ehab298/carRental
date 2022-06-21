@@ -7,7 +7,7 @@ const bookingRouter =require('../modules/Booking/booking.router')
  const conntactUsRouter=require('../modules/conntactus/Connect.router')
 
  const VehicleRateRouter=require('../modules/VehicleRate/VehicleRate.router')
-
+ const CompanyRateRouter=require('../modules/CompanyRate/Company.router')
 
 
 module.exports={
@@ -17,6 +17,7 @@ module.exports={
     BranchRouter,
     VihicleRouter,
     bookingRouter,
-     VehicleRateRouter
+     VehicleRateRouter,
+     CompanyRateRouter
    
 }
