@@ -16,7 +16,7 @@ module.exports={
             Vehicletype:Joi.string().required(),
             transmissionType:Joi.boolean(),
             Car_Seat:Joi.boolean(),
-            airbag:Joi.boolean(),
+            airbag:Joi.string(),
             seatbelts:Joi.boolean(),
             ABS:Joi.boolean(),
             sunroof:Joi.boolean(),
