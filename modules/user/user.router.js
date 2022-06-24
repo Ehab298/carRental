@@ -38,7 +38,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",deleteController)
- router.get('/ownerbooking/:comapnyID',getownerbooking)
+ router.get('/ownerbooking/:companyID',getownerbooking)
  router.get("/ownerVehicle/:id",ownerVehicleController)
  router.get("/getAllUser",getuserController)
 

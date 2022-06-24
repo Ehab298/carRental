@@ -15,7 +15,7 @@ const car = require("../../../DB/models/Vehicle")
 
             let data = await car.find({_id:VehicleID})
 
-            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,status,VehicleID,UserID: req.User.id,comapnyID:data[0].companyID})
+            const Rend= await RentModel.insertMany({Pick_upLocation,return_Location,DateFrom,DateTo,message,status,VehicleID,UserID: req.User.id,companyID:data[0].companyID})
             res.status(200).json({message:"done",Rend});
        
        

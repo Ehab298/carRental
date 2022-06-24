@@ -8,7 +8,7 @@ const bookingSchema = new mongoose.Schema({
     status:{type:String,default:"Waiting"},
     VehicleID:{type:mongoose.Schema.Types.ObjectId,ref:"Vehicle"},
     UserID:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
-    comapnyID:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany"},
+    companyID:{type:mongoose.Schema.Types.ObjectId,ref:"VehicleCompany"},
 },{
 timestamps:true
 })
