@@ -3,10 +3,10 @@ const   Company=require('../../../DB/models/VehicleCompany')
 
 
  module.exports = async(req,res)=>{
-    
+   const UserID = req.params.UserID;
     const {  companyRate,CompanyID} = req.body;
    
-        const Data= await CompanyRateControl.insertMany({  companyRate,CompanyID, UserID: req.User.id})
+        const Data= await CompanyRateControl.insertMany({  companyRate,CompanyID, UserID})
 
        
                

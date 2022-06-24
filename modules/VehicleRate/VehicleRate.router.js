@@ -12,7 +12,7 @@ const updateVehicleRateController =require('./Controller/updateVehicleRate');
 
 
 router.get('/userbookingRate/:UserID',getafterDateto)
-router.post("/updateVehicleRate",authentications(),handelValidations(VehicleRate),updateVehicleRateController)
+router.post("/updateVehicleRate/:UserID",handelValidations(VehicleRate),updateVehicleRateController)
 
    
 module.exports=router

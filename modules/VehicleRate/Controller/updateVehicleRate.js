@@ -3,10 +3,10 @@ const  Vehicle=require('../../../DB/models/Vehicle')
 
 
  module.exports = async(req,res)=>{
-    
+   const UserID = req.params.UserID;
     const {  VehicleRate,VehicleID} = req.body;
    
-        const Data= await VehicleRatecontrol.insertMany({  VehicleRate,VehicleID, UserID: req.User.id})
+        const Data= await VehicleRatecontrol.insertMany({  VehicleRate,VehicleID, UserID})
 
        
                

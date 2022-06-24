@@ -8,11 +8,11 @@ const  {CompanyRate}  = require('./validation');
 const handelValidations = require('../../middleware/handelValidations');
 
 const updateVehicleRateController =require('./Controller/addCompanyRate');
+const getownerbooking =require('./Controller/getCompanyRate');
 
+router.get('/ownerbookingRate/:companyID',getownerbooking)
 
-
-
-router.post("/updateCompanyRate",authentications(),handelValidations(CompanyRate),updateVehicleRateController)
+router.post("/updateCompanyRate/:UserID",handelValidations(CompanyRate),updateVehicleRateController)
 
    
 module.exports=router
