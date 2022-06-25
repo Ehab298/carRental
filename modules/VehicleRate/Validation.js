@@ -9,7 +9,7 @@ module.exports={
          
             
             
-            VehicleRate:Joi.number().min(0).max(5).required(),
+            VehicleRate:Joi.number().min(1).max(5).required(),
             VehicleID:Joi.string().required()
           
             
