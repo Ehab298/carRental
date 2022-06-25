@@ -13,6 +13,19 @@ module.exports={
     
         })
     },
+    updaterent:{
+        body:Joi.object().required().keys({
+            DateFrom:Joi.string(),
+            DateTo:Joi.string(),
+            VehicleID:Joi.string(),
+            Pick_upLocation:Joi.string(),
+            return_Location:Joi.string(),
+            message:Joi.string(),
+         
+            status:Joi.string()
+    
+        })
+    }
   
 }
 
