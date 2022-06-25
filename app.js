@@ -10,20 +10,7 @@ port=process.env.PORT
 app.use('/Uploads',express.static('Uploads'))
 const connecttionDB =require('./DB/dbConnection')
 
-var multer = require('multer');
-var upload = multer();
 
-
-
-
-var bodyParser = require('body-parser');
-
-
-// for parsing multipart/form-data
-app.use(upload.array());
-
-app.use(bodyParser.urlencoded({ extended: true}));
-app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 const {userRouter,
     VehicleCompanyRouter,

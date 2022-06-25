@@ -21,7 +21,6 @@ module.exports={
             Pick_upLocation:Joi.string(),
             return_Location:Joi.string(),
             message:Joi.string(),
-         
             status:Joi.string()
     
         })
