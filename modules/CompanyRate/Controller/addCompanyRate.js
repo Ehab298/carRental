@@ -11,11 +11,22 @@ const   Company=require('../../../DB/models/VehicleCompany')
        
                
      let data =    await   CompanyRateControl.aggregate([{ $group: {
-        _id: '$UserID',
+      _id: '$CompanyID',
         CompanyRateavg: { $avg: '$companyRate'}
 }}])
+let x= CompanyID.toString()
+         for (let index = 0; index < data.length; index++) {
+          
+        let y=data[index]._id.toString()
+      
+            if (x==y) {
+                body.push(data[index]);
+            }
+         } 
 
-const updataCompanyrate = await Company.findOneAndUpdate({_id:CompanyID},{companyRate:data[0].CompanyRateavg},{new:true})
+const updataCompanyrate = await Company.findOneAndUpdate({_id:CompanyID},{companyRate:body[(body.length)-1].CompanyRateavg},{new:true})
 res.status(200).json({message:'success',updataCompanyrate})
 }
 
+
+    
