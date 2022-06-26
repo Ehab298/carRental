@@ -24,8 +24,8 @@ module.exports =async(req,res,next)=>{
           
           <head>
               <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-              <title>Reset Password Email Template</title>
-              <meta name="description" content="Reset Password Email Template.">
+              <title>Comfirm Email </title>
+              <meta name="description" content="Comfirm Email.">
               <style type="text/css">
                   a:hover {text-decoration: underline !important;}
               </style>
@@ -69,8 +69,7 @@ module.exports =async(req,res,next)=>{
                                                      click the following link 
                                                   </p>
                                                   <a href="https://car-rental-eg.herokuapp.com/virfiyEmail/${token}"
-                                                      style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
-                                                      Password</a>
+                                                      style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Verify your email</a>
                                               </td>
                                           </tr>
                                           <tr>
