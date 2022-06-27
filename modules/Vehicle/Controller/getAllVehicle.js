@@ -4,7 +4,7 @@ module.exports=async(req,res)=>{
     
      
         let data = await vehicleModel.find().populate('companyID')
-        res.status(200).json({message:"done",data})
+        res.status(200).json({message:"success",data})
         
 };
 

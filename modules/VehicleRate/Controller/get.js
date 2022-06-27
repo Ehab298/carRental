@@ -24,6 +24,6 @@ module.exports=async(req,res)=>{
 //             VehicleRateavg: { $avg: '$VehicleRate'}
 // }}
 
-            res.status(200).json({message:"done",body});
+            res.status(200).json({message:"success",body});
     
 };

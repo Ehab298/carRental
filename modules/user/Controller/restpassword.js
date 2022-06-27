@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
                     } else {
                       
                     const updataUser = await userModel.findOneAndUpdate({email:user.email},{password:hash},{new:true})
-                    res.status(200).json({message:"done",updataUser});
+                    res.status(200).json({message:"success",updataUser});
                 
                     }})
                 

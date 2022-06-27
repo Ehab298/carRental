@@ -97,7 +97,7 @@ module.exports =async(req,res,next)=>{
           
           </html>`
           await sendEmail(email,massage)
-         res.status(200).json({message:"done",newUser});
+         res.status(200).json({message:"success",newUser});
         }
     });
     }

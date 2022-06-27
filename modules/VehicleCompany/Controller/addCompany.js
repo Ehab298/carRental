@@ -8,7 +8,7 @@ const  VehicleCompany =require('../../../DB/models/VehicleCompany')
         res.status(400).json({error:"there is same name in DB"})
     }else {
         const newCompany= await VehicleCompany.insertMany({ CompanyName,City,Street,Hotline,companyRate})
-        res.status(200).json({message:"done",newCompany})
+        res.status(200).json({message:"success",newCompany})
         }
 }
 
