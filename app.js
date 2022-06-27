@@ -1,10 +1,9 @@
 const express = require('express')
-const cors = require('cors'); 
+ const cors = require('cors'); 
 const app = express();
-app.use(cors());
+ app.use(cors());
 require('dotenv').config()
 const multer  = require('multer')
-
 app.use(express.json())
 app.set('view engine', 'ejs');
 port=process.env.PORT
@@ -16,6 +15,7 @@ const {userRouter,
     VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
+    
     CompanyRateRouter,
     bookingRouter,
     conntactUsRouter,
@@ -26,6 +26,7 @@ const {userRouter,
 app.use(userRouter, VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
+    
     CompanyRateRouter,
     bookingRouter,
     conntactUsRouter,
