@@ -1,15 +1,15 @@
 const express = require('express')
- const cors = require('cors'); 
+const cors = require('cors'); 
 const app = express();
- app.use(cors());
+app.use(cors());
 require('dotenv').config()
+const multer  = require('multer')
 
 app.use(express.json())
 app.set('view engine', 'ejs');
 port=process.env.PORT
 app.use('/Uploads',express.static('Uploads'))
 const connecttionDB =require('./DB/dbConnection')
-
 
 app.use(express.urlencoded({ extended: true }));
 const {userRouter,
