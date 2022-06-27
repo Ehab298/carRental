@@ -15,7 +15,7 @@ const handelValidations = require('../../middleware/handelValidations');
   const{ getone,Restpassword }= require('./Controller/getOneuse');
 
  const getuserController =require('./Controller/getAlluser');
-const { singup,singin,singinAdmin ,restpassword} = require('./validation');
+const { singup,singin,singinAdmin ,restpassword,updateuser} = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
 const upload = require('../../middleware/multer');
 const { required } = require('joi');
@@ -34,7 +34,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.post("/Adminsingin",handelValidations(singinAdmin),singinAdminController)
  router.get("/getOneuser/:token",getone)
  router.post("/restpasswor",handelValidations(restpassword),Restpassword)
- router.patch("/updateuser/:id",updateController)
+ router.patch("/updateuser/:id",handelValidations(updateuser),updateController)
  
  router.delete("/deleteOneVehicle/:id",deleteController)
  router.delete("/delete/:id",deleteController)

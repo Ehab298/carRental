@@ -34,5 +34,18 @@ module.exports={
             cpassword:Joi.ref('password'), 
         
         })
+    },
+    updateuser:{
+        body:Joi.object().required().keys({
+            firstName:Joi.string(),
+            lastName:Joi.string(),
+       
+       
+        phone:Joi.number(),
+        conpanyId:Joi.string(),
+        role:Joi.string()
+        
+
+        })
     }
 }
