@@ -3,25 +3,25 @@ module.exports=async(req,res)=>{
     
     const companyID = req.params.companyID;
      
-        let data = await bookingModel.find({companyID}).populate('VehicleID')
+        let data1 = await bookingModel.find({companyID}).populate({ path: 'VehicleID', populate: { path: 'companyID' }});
 
 
         let x = new Date().toISOString() 
-        let body = []
+        let data = []
   
-        for (let index = 0;index<data.length; index++) {
+        for (let index = 0;index<data1.length; index++) {
            
-            let y =data[index].DateTo.toISOString()
+            let y =data1[index].DateTo.toISOString()
             if(x>=y){
                
-                body.push(data[index]);
+                data.push(data1[index]);
         
             }
          
             
         }
-        if (body.length>0) 
-            res.status(200).json({message:"done",body});
+        if (data.length>0) 
+            res.status(200).json({message:"done",data});
         else
         res.json({message:"No_data"});
 };
