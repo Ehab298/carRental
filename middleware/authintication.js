@@ -4,29 +4,28 @@ const userModel =require('../DB/models/User')
 const authentications= () => {
     return async (req, res, next) => {
         const token = req.headers["authorization"]
-        // if (!token || token == null || token == undefined) {
-        //     res.json({ message: "in-valid token" })
-        // } 
-        // if {
+        if (!token || token == null || token == undefined) {
+            res.json({ message: "in-valid token" })
+        } else {
                 jwt.verify(token, 'shhhhh',async function (err, decoded) {
-                // if (err) {
-                //     res.json({ message: "in-valid signature" })
-                // } else {
+                if (err) {
+                    res.json({ message: "in-valid signature" })
+                } else {
                     req.user = decoded
                     const user= await userModel.findOne({_id:decoded.id})
                     if (!user) {
-                        res.status(402).json({ message: "rong user" })
+                        res.json({ message: "rong user" })
                     }
                     else{ 
                         req.User=user
                         next()
                     }
-                // }
+                }
 
 
             });
 
-        // }
+        }
     }
 }
 
