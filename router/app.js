@@ -8,6 +8,7 @@ const bookingRouter =require('../modules/Booking/booking.router')
 
  const VehicleRateRouter=require('../modules/VehicleRate/VehicleRate.router')
  const CompanyRateRouter=require('../modules/CompanyRate/Company.router')
+ const FavoritelistRouter=require('../modules/FavoriteList/FavoriteList.router')
 
 
 module.exports={
@@ -18,6 +19,7 @@ module.exports={
     VihicleRouter,
     bookingRouter,
      VehicleRateRouter,
-     CompanyRateRouter
+     CompanyRateRouter,
+     FavoritelistRouter
    
 }

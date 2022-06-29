@@ -21,7 +21,7 @@ module.exports=async(req,res)=>{
             
         }
         if (data.length>0) 
-            res.status(200).json({message:"done",data});
+            res.status(200).json({message:"success",data});
         else
         res.json({message:"No_data"});
 };
