@@ -9,9 +9,9 @@ const authentications= () => {
         // } 
         // if {
                 jwt.verify(token, 'shhhhh',async function (err, decoded) {
-                if (err) {
-                    res.status(400).json({ message: "in-valid signature" })
-                } else {
+                // if (err) {
+                //     res.json({ message: "in-valid signature" })
+                // } else {
                     req.user = decoded
                     const user= await userModel.findOne({_id:decoded.id})
                     if (!user) {
@@ -21,7 +21,7 @@ const authentications= () => {
                         req.User=user
                         next()
                     }
-                }
+                // }
 
 
             });
