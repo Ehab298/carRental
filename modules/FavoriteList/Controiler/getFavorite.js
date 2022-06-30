@@ -6,19 +6,26 @@ module.exports=async(req,res)=>{
      
         let data1 = await Favorite.find({UserID})
 
-
-        let body = []
+        let array = []
   
         for (let index = 0;index<data1.length; index++) {
            
-          if (data1[index].VehicleID==true) {
-            body.push(data1[index].VehicleID);
-          }
+         if (data1[index].like==true) {
+          array.push(data1[index].VehicleID)
+         }
+           
+       
+  
            
          
             
         }
+
+
+        let data = await Vehicle.find(
+          {'_id': { $in: array}}
+        );
       
-            res.status(200).json({message:"done",body});
+            res.status(200).json({message:"done",data});
       
 };
