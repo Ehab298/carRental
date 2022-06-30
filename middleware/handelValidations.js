@@ -20,13 +20,13 @@ module.exports=(schema)=>{
             }
         })
         if (ValidateError.length) {
-            res.json({message:"ValidateError",ValidateError})
+            res.status(400).json({message:"ValidateError",ValidateError})
         }
         else
             next()
         }
         catch(error){
-            res.json({message:"unexpected error occured"});
+            res.status(400).json({message:"unexpected error occured"});
         }
     }
 }
