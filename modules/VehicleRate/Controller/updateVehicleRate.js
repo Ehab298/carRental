@@ -5,7 +5,14 @@ body = []
  module.exports = async(req,res)=>{
    const UserID = req.params.UserID;
     const {  VehicleRate,VehicleID} = req.body;
-   
+
+     
+    let data1 = await VehicleRatecontrol.find({UserID:UserID,VehicleID:VehicleID}).select();
+
+    if (data1.length>0) {
+
+        res.json({message:'This vehicle has already been rated! '})
+    } else {
         const Data= await VehicleRatecontrol.insertMany({  VehicleRate,VehicleID, UserID})
 
        
@@ -28,5 +35,7 @@ let x= VehicleID.toString()
 
  const updataVehiclerate = await Vehicle.findOneAndUpdate({_id:VehicleID},{VehicleRate:body[(body.length)-1].VehicleRateavg},{new:true}).populate('companyID')
 res.status(200).json({message:'success',updataVehiclerate})
+    }
+        
 }
 

@@ -1,7 +1,7 @@
 const  CompanyRateControl =require('../../../DB/models/CompanyRate')
 const   Company=require('../../../DB/models/VehicleCompany')
 
-
+body = []
  module.exports = async(req,res)=>{
    const UserID = req.params.UserID;
     const {  companyRate,CompanyID} = req.body;
@@ -9,7 +9,7 @@ const   Company=require('../../../DB/models/VehicleCompany')
         const Data= await CompanyRateControl.insertMany({  companyRate,CompanyID, UserID})
 
        
-               
+          
      let data =    await   CompanyRateControl.aggregate([{ $group: {
       _id: '$CompanyID',
         CompanyRateavg: { $avg: '$companyRate'}
