@@ -5,6 +5,13 @@ body = []
  module.exports = async(req,res)=>{
    const UserID = req.params.UserID;
     const {  companyRate,CompanyID} = req.body;
+
+    let data1 = await CompanyRateControl.find({UserID:UserID,CompanyID:CompanyID}).select();
+
+    if (data1.length>0) {
+
+        res.json({message:'This CompanyID has already been rated! '})
+    } else {
    
         const Data= await CompanyRateControl.insertMany({  companyRate,CompanyID, UserID})
 
@@ -26,6 +33,7 @@ let x= CompanyID.toString()
 
 const updataCompanyrate = await Company.findOneAndUpdate({_id:CompanyID},{companyRate:body[(body.length)-1].CompanyRateavg},{new:true})
 res.status(200).json({message:'success',updataCompanyrate})
+        }
 }
 
 
