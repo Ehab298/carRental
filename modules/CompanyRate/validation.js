@@ -9,7 +9,7 @@ module.exports={
          
             
             
-            companyRate:Joi.number().min(0).max(5).required(),
+            companyRate:Joi.number().min(1).max(5).required(),
             CompanyID:Joi.string().required()
           
             
