@@ -6,6 +6,8 @@ module.exports={
             City:Joi.string().required(),
             Street:Joi.string().required(),
              Hotline:Joi.number().required(),
+             Latitude:Joi.string(),
+             Longitude:Joi.string(),
       
 
         })
