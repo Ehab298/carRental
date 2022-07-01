@@ -24,7 +24,7 @@ module.exports=async(req,res)=>{
 
         let data = await Vehicle.find(
           {'_id': { $in: array}}
-        );
+        ).populate( 'companyID');
       
             res.status(200).json({message:"done",data});
       
