@@ -15,6 +15,7 @@ const handelValidations = require('../../middleware/handelValidations');
   const{ getone,Restpassword }= require('./Controller/getOneuse');
 
  const getuserController =require('./Controller/getAlluser');
+ const getUserbyGmailController =require('./Controller/getUserbyGmail');
 const { singup,singin,singinAdmin ,restpassword,updateuser} = require('./validation');
 const {authentications,authorization} = require('../../middleware/authintication');
 const upload = require('../../middleware/multer');
@@ -41,6 +42,7 @@ router.get('/virfiyEmail/:token',virfiyEmailController)
  router.get('/ownerbooking/:companyID',getownerbooking)
  router.get("/ownerVehicle/:id",ownerVehicleController)
  router.get("/getAllUser",getuserController)
+ router.get("/getUserbyGmail/:email",getUserbyGmailController)
 
  router.post('/pic',upload.single('image'),(req, res) =>{
      console.log(req.file.filename);
