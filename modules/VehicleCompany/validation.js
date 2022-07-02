@@ -6,6 +6,7 @@ module.exports={
             City:Joi.string().required(),
             Street:Joi.string().required(),
              Hotline:Joi.number().required(),
+             requirement:Joi.array(),
              Latitude:Joi.string(),
              Longitude:Joi.string(),
       

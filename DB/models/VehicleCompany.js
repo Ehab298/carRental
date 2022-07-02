@@ -5,6 +5,7 @@ const CompanySchema = new mongoose.Schema({
     companyRate:{type:Number,default:0},
     Street:{type:String},
     Hotline:{type:Number},
+    requirement: [{type: String}],
     Latitude:{type:String,default:'0'},
     Longitude:{type:String,default:'0'}
     

@@ -2,12 +2,12 @@ const  VehicleCompany =require('../../../DB/models/VehicleCompany')
 
 
  module.exports = async(req,res)=>{
-    const { CompanyName,City,Street,Hotline,companyRate, Latitude,Longitude} = req.body;
+    const { CompanyName,City,Street,Hotline,companyRate, requirement,Latitude,Longitude} = req.body;
     const Company =await VehicleCompany.findOne({CompanyName})
     if(Company){
         res.status(400).json({error:"there is same name in DB"})
     }else {
-        const newCompany= await VehicleCompany.insertMany({ CompanyName,City,Street,Hotline,companyRate,Latitude,Longitude})
+        const newCompany= await VehicleCompany.insertMany({ CompanyName,City,Street,Hotline,companyRate,requirement,Latitude,Longitude})
         res.status(200).json({message:"success",newCompany})
         }
 }
