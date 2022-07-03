@@ -6,12 +6,12 @@ const car = require("../../../DB/models/Vehicle")
     
         let overlappedRent = await RentModel.find({VehicleID:VehicleID, DateFrom: { $lte: DateTo }, DateTo: { $gte: DateFrom } }).select();
         //start date > today date && start date <= from date   
-        if(new Date(DateFrom) < new Date() || new Date(DateFrom) > new Date(DateTo))
-            res.json({message:"Date from not smaller than Date To or Date From not larger than Current Date"});
-        //get overlaped rents, (StartA <= EndB) and (EndA >= StartB)
-        else if(overlappedRent.length > 0)
-        res.json({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.toISOString()} TO ${overlappedRent[0].DateTo.toISOString()}`});  
-        else{
+        // if(new Date(DateFrom) < new Date() || new Date(DateFrom) > new Date(DateTo))
+        //     res.json({message:"Date from not smaller than Date To or Date From not larger than Current Date"});
+        // //get overlaped rents, (StartA <= EndB) and (EndA >= StartB)
+        // else if(overlappedRent.length > 0)
+        // res.json({message:`Vehicle already rentet in this period,From ${overlappedRent[0].DateFrom.toISOString()} TO ${overlappedRent[0].DateTo.toISOString()}`});  
+        // else{
 
             let data = await car.find({_id:VehicleID})
 
@@ -20,7 +20,7 @@ const car = require("../../../DB/models/Vehicle")
        
        
                        
-         }
+        //  }
 }
 
 
