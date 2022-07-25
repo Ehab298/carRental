@@ -11,19 +11,21 @@ app.use('/Uploads',express.static('Uploads'))
 const connecttionDB =require('./DB/dbConnection')
 
 app.use(express.urlencoded({ extended: true }));
-const {userRouter,
+const {
+    userRouter,
     VehicleCompanyRouter,
     BranchRouter,
     VihicleRouter,
-    
     CompanyRateRouter,
     bookingRouter,
     conntactUsRouter,
     VehicleRateRouter,
     FavoritelistRouter
   
-    }
-    //  = require('./router/app')
+    }= require('./router/app')
+
+
+ 
 
 app.use(userRouter, VehicleCompanyRouter,
     BranchRouter,
