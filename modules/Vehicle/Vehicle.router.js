@@ -13,9 +13,9 @@ const handelValidations = require('../../middleware/handelValidations');
 const {authentications,authorization} = require('../../middleware/authintication');
 
 
-router.post("/addVehicle1",authentications(),authorization(['Admin']),upload.array('image', 4),handelValidations(addVehicle),addVehicleController)
-router.get("/getAllVehicle1",getAllVehicleController)
-router.get("/getOneVehicle1",getOneVehicleController)
+router.post("/addVehicle",authentications(),authorization(['Admin']),upload.array('image', 4),handelValidations(addVehicle),addVehicleController)
+router.get("/getAllVehicle",getAllVehicleController)
+router.get("/getOneVehicle",getOneVehicleController)
 
 router.delete("/deleteVehicle/:id",authentications(),authorization(['Admin']),deleteOneVehicleController)
 router.get("/getOne/:id",getone)
