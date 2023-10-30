@@ -71,7 +71,7 @@ module.exports =async(req,res,next)=>{
                                                     password has been generated for you. To reset your password, click the
                                                     following link and follow the instructions.
                                                 </p>
-                                                <a href="https://car-rental-eg.herokuapp.com/getOneuser/${token}"
+                                                <a href="http://localhost:4400/getOneuser/${token}"
                                                     style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
                                                     Password</a>
                                             </td>
