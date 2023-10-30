@@ -1,6 +1,7 @@
  const router = require('express').Router();
  const multer  = require('multer')
 const handelValidations = require('../../middleware/handelValidations');
+
  const singupController =require('./Controller/signup');
  const singinController =require('./Controller/sigIn');
  const singinAdminController =require('./Controller/adminSigin');

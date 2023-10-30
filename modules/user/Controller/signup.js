@@ -2,11 +2,9 @@ const userModel = require('../../../DB/models/User')
 const bcrypt = require('bcrypt');
 const sendEmail = require("../../../middleware/sendEmail")
 
-
-
 var jwt = require('jsonwebtoken');
 module.exports =async(req,res,next)=>{
-    console.log('here');
+
  try{   
     
     const{firstName,lastName,email,password,cpassword, phone,role,conpanyId}= req.body
@@ -70,7 +68,7 @@ module.exports =async(req,res,next)=>{
                                                   <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
                                                      click the following link 
                                                   </p>
-                                                  <a href="https://car-rental-eg.herokuapp.com/virfiyEmail/${token}"
+                                                  <a href="https://wandering-hen-tiara.cyclic.app/${token}"
                                                       style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Verify your email</a>
                                               </td>
                                           </tr>
