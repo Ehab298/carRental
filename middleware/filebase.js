@@ -2,7 +2,7 @@ var aws = require('aws-sdk')
 var express = require('express')
 var multer = require('multer')
 var multerS3 = require('multer-s3')
-
+console.log('dcc');
 var app = express()
 var s3 = new aws.S3({ endpoint: process.env.FileBaseURL, 
     credentials: {
