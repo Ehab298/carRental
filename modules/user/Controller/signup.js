@@ -68,6 +68,8 @@ module.exports =async(req,res,next)=>{
                                                   <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
                                                      click the following link 
                                                   </p>
+
+                                                  
                                                   <a href="http://localhost:4400/virfiyEmail/${token}"
                                                     style="background:#3320e2;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Verify your email</a>
                                               </td>
