@@ -11,12 +11,12 @@ const deleteOneVehicleController =require('./Controller/deleteVehicle');
 
 const updatevehicleController =require('./Controller/upDateVehicle');
 const  {addVehicle,updateVehicle}  = require('./validations');
-const upload1= require("../../middleware/filebase")
+
 const handelValidations = require('../../middleware/handelValidations');
 const {authentications,authorization} = require('../../middleware/authintication');
 const addCarController = require('./Controller/addcar');
 router.post('/addcar', authentications(),authorization(['Admin']),upload.single('image'),addCarController)
-router.post("/addVehicle",authentications(),authorization(['Admin']),upload1.array('image', 4),handelValidations(addVehicle),addVehicleController)
+
 router.get("/getAllVehicle",getAllVehicleController)
 router.get("/getOneVehicle",getOneVehicleController)
 
