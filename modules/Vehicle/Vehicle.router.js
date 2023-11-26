@@ -3,14 +3,14 @@ const multer = require('multer');
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
-const addVehicleController =require('./Controller/addVehicle');
+
 const getAllVehicleController =require('./Controller/getAllVehicle');
 const getOneVehicleController =require('./Controller/getOnevehicle');
 const getone =require('./Controller/getOnecar');
 const deleteOneVehicleController =require('./Controller/deleteVehicle');
 
 const updatevehicleController =require('./Controller/upDateVehicle');
-const  {addVehicle,updateVehicle}  = require('./validations');
+const  {updateVehicle}  = require('./validations');
 
 const handelValidations = require('../../middleware/handelValidations');
 const {authentications,authorization} = require('../../middleware/authintication');
