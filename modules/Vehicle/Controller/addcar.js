@@ -1,20 +1,24 @@
 
 const { bucket } = require('../../../DB/models/filebase'); 
 const  vehicleModel =require('../../../DB/models/Vehicle')
+const  companyModel =require('../../../DB/models/VehicleCompany')
 module.exports =async(req,res)=>{
 try {
     const file = req.file;
     
-console.log(req.file);
+
     console.log('here0');
     const _comapny = req.User.conpanyId
     const id = req.User.id
 
+    let data = await companyModel.findById({_id:_comapny})
+  console.log(data);
     const {brand,model,color, year,Vehicletype,Automatic,manual, doorsNumber,chairsNumber, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,sunroof,Parking_Sensors,  Radio, Navigation_System, Bluetooth,  Remote_Start, AC,  Music_Player, CC, Extra_Tyre,  Charger,  Fire_Extinguisher, First_Aid_Kit, Smoking_Preferences,companyID} = req.body;
     // Check if file is present
     if (!file) {
       return res.status(400).json({ error: 'No file uploaded' });
     }
+
 
     // Upload the file to Firebase Cloud Storage
     const fileName = `${Date.now()}-${file.originalname}`;
@@ -39,7 +43,7 @@ console.log(req.file);
           });
             
           const newCarModel= await vehicleModel.insertMany({brand,
-            model,color,year,Vehicletype,doorsNumber,chairsNumber,Automatic,manual, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID:_comapny,imageURL: url[0]})
+            model,color,year,Vehicletype,doorsNumber,chairsNumber,Automatic,manual, VehicleRate,pricePerDay,transmissionType, Car_Seat, airbag, seatbelts, ABS,  sunroof, Parking_Sensors,Radio, Navigation_System,Bluetooth,Remote_Start,AC, Music_Player,  CC,  Extra_Tyre,Charger, Fire_Extinguisher, First_Aid_Kit,Smoking_Preferences,companyID:data,imageURL: url[0]})
       res.json({ success: true,newCarModel});
     });
 
